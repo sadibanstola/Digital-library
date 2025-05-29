@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './Pages/Home/Home.jsx';
 
 const About = () => (
@@ -38,6 +38,7 @@ const AppRoutes = () => {
       <Route path="/my-library" element={<MyLibrary />} />
       <Route path="/discover" element={<Discover />} />
       <Route path="/register-login" element={<RegisterLogin />} />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 };
