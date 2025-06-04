@@ -12,7 +12,10 @@ const Login = () => {
         backgroundPosition: 'center',
       }}
     >
-      <div className="w-full max-w-[400px] p-6 bg-[#FFFFFF] rounded-lg shadow-md mx-auto">
+     <div
+  className="absolute w-[525px] h-[804px] rounded-[12px] p-6 bg-[#FFFFFF] shadow-md"
+  style={{ top: '110px', left: '815px' }}
+>
         <div className="mb-6">
           <h1
             className="inline-block"
@@ -43,7 +46,8 @@ const Login = () => {
             Discover stories that match your imagination.
           </p>
         </div>
-        <div className="bg-[#F1F4FE] p-4 rounded-md text-center">
+        <div className="bg-[#F1F4FE] w-[477px] h-[539px] rounded-[16px] p-[24px] text-center" style={{ top: '221px', left: '24px', gap: '15px', position: 'absolute' }}>
+
           <h2
             style={{
               fontFamily: 'Marion',

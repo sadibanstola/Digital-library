@@ -25,23 +25,20 @@ const SignUp = () => {
         }}
       >
         <div
-          className="bg-[#E8ECF9] p-4 rounded-md text-center"
-          style={{
-            width: '538px',
-            height: '659px',
-          }}
-        >
-          <div className="mb-6">
+     className="absolute w-[361px] h-[93px] mb-6"
+     style={{ top: '40px', left: '882px', gap: '12px' }}>
             <h1
               className="inline-block"
               style={{
                 fontFamily: 'Marion',
                 fontWeight: 400,
                 fontSize: '28px',
-                lineHeight: '28px',
+                lineHeight: '100%',
                 letterSpacing: '0',
-                textAlign: 'right',
+                textAlign: 'center',
                 color: '#121212',
+                width:'361px',
+                height:'31px',
               }}
             >
               Create Your Free Account
@@ -52,16 +49,22 @@ const SignUp = () => {
                 fontFamily: 'Gothic A1',
                 fontWeight: 400,
                 fontSize: '20px',
-                lineHeight: '20px',
+                lineHeight: '100%',
                 letterSpacing: '0',
                 textAlign: 'center',
                 color: '#121212',
+                width:'361px',
+                height:'50px',
               }}
             >
               Start exploring your dream library in minutes
             </p>
           </div>
-          <h2
+
+        <div
+    className="absolute w-[538px] h-[610px] min-w-[328px] rounded-[10px] pt-[32px] pr-[24px] pb-[32px] pl-[24px] bg-[#E8ECF9] text-center"
+    style={{ top: '150px', left: '804px', gap: '16px' }}>
+           <h2
             style={{
               fontFamily: 'Marion',
               fontWeight: 700,
@@ -288,13 +291,21 @@ const SignUp = () => {
             >
               SIGN UP
             </button>
-            <p
+            
+          </form>
+          
+        </div>
+        <div
+   className="absolute w-[289px] h-[27px]"
+   style={{ top: '760px', left: '946px' }}>
+
+         <p
               className="mt-4 text-center"
               style={{
                 fontFamily: 'Gothic A1',
                 fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '22px',
+                fontSize: '15px',
+                lineHeight: '100%',
                 letterSpacing: '0',
                 color: '#121212',
               }}
@@ -306,16 +317,15 @@ const SignUp = () => {
                 style={{
                   fontFamily: 'Gothic A1',
                   fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '22px',
+                  fontSize: '15px',
+                  lineHeight: '100%',
                   letterSpacing: '0',
                 }}
               >
-                LOGIN
+                Login
               </Link>
             </p>
-          </form>
-        </div>
+           </div>
       </div>
     </div>
   );
