@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import backgroundImage from '/public/picart2.png';
+import backgroundImage from '/picart2.png';
 
 const Login = () => {
   return (
@@ -13,40 +13,45 @@ const Login = () => {
       }}
     >
      <div
-  className="absolute w-[525px] h-[804px] rounded-[12px] p-6 bg-[#FFFFFF] shadow-md"
-  style={{ top: '110px', left: '815px' }}
+  className="absolute w-[525px] h-[710px] rounded-[12px] p-6 bg-[#FFFFFF] shadow-md"
+  style={{ top: '70px', left: '815px' }}
 >
-        <div className="mb-6">
-          <h1
-            className="inline-block"
-            style={{
-              fontFamily: 'Marion',
-              fontWeight: 400,
-              fontSize: '28px',
-              lineHeight: '28px',
-              letterSpacing: '0',
-              textAlign: 'right',
-              color: '#121212',
-            }}
-          >
-            Digital Library of Dreams
-          </h1>
-          <p
-            className="mt-1"
-            style={{
-              fontFamily: 'Gothic A1',
-              fontWeight: 400,
-              fontSize: '20px',
-              lineHeight: '20px',
-              letterSpacing: '0',
-              textAlign: 'center',
-              color: '#121212',
-            }}
-          >
-            Discover stories that match your imagination.
-          </p>
-        </div>
-        <div className="bg-[#F1F4FE] w-[477px] h-[539px] rounded-[16px] p-[24px] text-center" style={{ top: '221px', left: '24px', gap: '15px', position: 'absolute' }}>
+       <div className="mb-6 text-center" >
+  <h1
+    className="relative"
+    style={{
+      fontFamily: 'Marion',
+      fontWeight: 400,
+      fontSize: '28px',
+      lineHeight: '28px',
+      letterSpacing: '0',
+      color: '#121212',
+      top:'20px',
+     
+    }}
+  >
+    Digital Library of Dreams
+  </h1>
+  <p
+    className="relative"
+    style={{
+      fontFamily: 'Gothic A1',
+      fontWeight: 400,
+      fontSize: '20px',
+      lineHeight: '100%',
+      letterSpacing: '0',
+      top:'30px',
+      width:'361px',
+      left:'30px',
+    
+      
+    }}
+  >
+    Discover stories that match your imagination.
+  </p>
+</div>
+
+        <div className="bg-[#F1F4FE] w-[477px] h-[500px] rounded-[16px] p-[24px] text-center" style={{ top: '150px', left: '24px', gap: '15px', position: 'absolute' }}>
 
           <h2
             style={{

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import backgroundImage from '/public/onboarding5 1.png';
+import backgroundImage from '/onboarding5 1.png';
 
 const SignUp = () => {
   return (
