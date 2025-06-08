@@ -67,7 +67,7 @@ const Login = () => {
             LOGIN
           </h2>
           <p
-            className="mt-1"
+            className="mt-1 "
             style={{
               fontFamily: 'Marion',
               fontWeight: 400,

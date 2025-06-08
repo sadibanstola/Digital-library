@@ -4,12 +4,14 @@ import Home from './Pages/Home/Home.jsx';
 import Login from './Pages/Login/Login.jsx';
 import SignUp from './Pages/SignUp/SignUp.jsx';
 import About from './Pages/About/About.jsx';
+import Explore from './Pages/Explore/Explore.jsx';
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
+     
       <Route path="/my-library" element={<MyLibrary />} />
       <Route path="/discover" element={<Discover />} />
       <Route path="/login" element={<Login />} />
