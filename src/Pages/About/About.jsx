@@ -11,7 +11,7 @@ const About = () => {
     >
       {/* Top Banner Image */}
       <img
-        src="/public/img.png"
+        src="/img.png"
         alt="About Banner"
         className="w-full"
         style={{
@@ -23,7 +23,7 @@ const About = () => {
       />
       {/* Logo Image */}
       <img
-        src="/public/logo.png"
+        src="/logo.png"
         alt="LibraDream Logo"
         className="absolute"
         style={{
@@ -192,7 +192,7 @@ const About = () => {
           boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
         }}>
           <img
-            src="/public/1.png" // Replace with actual image path
+            src="/book.png" 
             alt="Curated Content"
             style={{
               width: '100%',
@@ -202,22 +202,22 @@ const About = () => {
           />
           <h3 style={{
             fontFamily: '"Gothic A1", sans-serif',
-            fontWeight: 500,
+            fontWeight: 600,
             fontSize: '20px',
             color: '#121212',
             marginBottom: '10px',
            
           }}>
-            Curated Content
+            Thousands of Free eBooks
           </h3>
           <p style={{
            fontFamily: '"Gothic A1", sans-serif',
             fontWeight: 400,
             fontSize: '16px',
-            color: '#121212',
+            color: '#121212CC',
             lineHeight: '1.5'
           }}>
-            Discover stories handpicked by our team to match your interest.
+            Access a vast collection of stories across every genre, completely free.
           </p>
         </div>
         {/* Card 2: Save & Organize */}
@@ -230,7 +230,7 @@ const About = () => {
           boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
         }}>
           <img
-            src="/public/img-2.png" // Replace with actual image path
+            src="/person.png" 
             alt="Save & Organize"
             style={{
               width: '100%',
@@ -240,21 +240,22 @@ const About = () => {
           />
           <h3 style={{
             fontFamily: '"Gothic A1", sans-serif',
-            fontWeight: 500,
+            fontWeight: 600,
             fontSize: '20px',
             color: '#121212',
             marginBottom: '10px'
           }}>
-            Save & Organize
+            Ads Free, Clean Interface
           </h3>
           <p style={{
             fontFamily: '"Gothic A1", sans-serif',
             fontWeight: 400,
             fontSize: '16px',
-            color: '#121212',
-            lineHeight: '1.5'
+            color: '#121212CC',
+            lineHeight: '1.5',
+            width:'274px',
           }}>
-            Easily save your favorite stories and organize them into collections.
+            Enjoy a peaceful reading experience with zero distractions.
           </p>
         </div>
         {/* Card 3: Mood Discovery */}
@@ -267,7 +268,7 @@ const About = () => {
           boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
         }}>
           <img
-            src="/public/img-3.png" // Replace with actual image path
+            src="/family.png" 
             alt="Mood Discovery"
             style={{
               width: '100%',
@@ -277,21 +278,21 @@ const About = () => {
           />
           <h3 style={{
             fontFamily: '"Gothic A1", sans-serif',
-            fontWeight: 500,
+            fontWeight: 600,
             fontSize: '20px',
             color: '#121212',
             marginBottom: '10px'
           }}>
-            Mood Discovery
+           For All Types of Readers
           </h3>
           <p style={{
             fontFamily: '"Gothic A1", sans-serif',
             fontWeight: 400,
             fontSize: '16px',
-            color: '#121212',
+            color: '#121212CC',
             lineHeight: '1.5'
           }}>
-            LibraDream let you explore content base on how you feel and interest.
+           Designed for students, casual readers, and lifelong learners alike.
           </p>
         </div>
      </div>
@@ -399,7 +400,7 @@ const About = () => {
   className="absolute w-full"
   style={{
     width: '1440px',
-    height: '490px',
+    height: '400px',
     top: '2636.65px',
     left: '0',
     backgroundColor: '#121212',
@@ -417,6 +418,7 @@ const About = () => {
       display: 'flex',
       justifyContent: 'space-between',
       width: '100%',
+     
     }}
   >
     {/* LibraDream Description */}
@@ -433,7 +435,7 @@ const About = () => {
         }}
       >
         <img
-          src="/public/logo.png"
+          src="/logo.png"
           alt="LibraDream Logo"
           style={{
             width: '40px',
@@ -459,8 +461,9 @@ const About = () => {
           fontSize: '16px',
           lineHeight: '24px',
           letterSpacing: '2%',
-          color: '#B0B0B0',
+          color: '#FFFFFF',
           fontFamily: 'Gothic A1',
+          width:'505px'
         }}
       >
         The Digital Library of Dreams is an immersive, personalized
@@ -479,7 +482,7 @@ const About = () => {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '15px',
+        gap: '20px',
         fontFamily: 'Gothic A1',
       }}
     >
@@ -555,7 +558,7 @@ const About = () => {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '15px',
+        gap: '20px',
       }}
     >
       <h4
@@ -578,7 +581,7 @@ const About = () => {
       >
         <a href="#">
           <img
-            src="/public/facboo1.png" // Replace with actual Facebook icon path
+            src="/facboo1.png" 
             alt="Facebook"
             style={{
               width: '35px',
@@ -588,7 +591,7 @@ const About = () => {
         </a>
         <a href="#">
           <img
-            src="/public/Logo_of_Twitter.svg.png" // Replace with actual Twitter/X icon path
+            src="/Logo_of_Twitter.svg.png"
             alt="Twitter"
             style={{
               width: '33px',
@@ -598,7 +601,7 @@ const About = () => {
         </a>
         <a href="#">
           <img
-            src="public/Instagram_logo_2022.svg.png" // Replace with actual Instagram icon path
+            src="/Instagram_logo_2022.svg.png" 
             alt="Instagram"
             style={{
               width: '33px',
@@ -608,7 +611,7 @@ const About = () => {
         </a>
         <a href="#">
           <img
-            src="/public/flat-icon-unread-message-blue-600nw-1909756030.jpg.webp" // Replace with actual Email icon path
+            src="/flat-icon-unread-message-blue-600nw-1909756030.jpg.webp" 
             alt="Email"
             style={{
               width: '33px',
@@ -623,7 +626,7 @@ const About = () => {
   {/* Copyright */}
   <div
     style={{
-      borderTop: '1px solid #333333',
+      borderside: '1px solid #FFFFFF',
       paddingTop: '20px',
       textAlign: 'center',
       fontWeight: 400,

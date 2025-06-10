@@ -32,8 +32,7 @@ const WhyChooseUs = () => {
           boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
         }}>
           <img
-            src="/public/1.png" // Replace with actual image path
-            alt="Curated Content"
+            src="/1.png" 
             style={{
               width: '100%',
               height: 'auto',
@@ -69,7 +68,7 @@ const WhyChooseUs = () => {
           boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
         }}>
           <img
-            src="/public/img-2.png" // Replace with actual image path
+            src="/img-2.png" 
             alt="Save & Organize"
             style={{
               width: '100%',
@@ -105,7 +104,7 @@ const WhyChooseUs = () => {
           boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
         }}>
           <img
-            src="/public/img-3.png" // Replace with actual image path
+            src="/img-3.png" 
             alt="Mood Discovery"
             style={{
               width: '100%',

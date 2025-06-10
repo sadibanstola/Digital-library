@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import WhyChooseUs from '../../Components/WhyChooseUs/WhyChooseUs';
 import Explore from '../Explore/Explore';
+import Discover from '../Discover/Discover';
+import Footer from '../Footer/Footer';
 
 const Home = () => (
   <div style={{
@@ -75,9 +77,12 @@ const Home = () => (
     </section>
     {/* Why Choose Us Section */}
     <WhyChooseUs />
-    {/* Why Choose Us Section */}
-    <Explore />
+     {/* Discover*/}
+    <Discover/>
+    
+
   </div>
+  
 );
 
 export default Home;
