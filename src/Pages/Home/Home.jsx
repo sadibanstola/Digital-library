@@ -24,7 +24,7 @@ const Home = () => (
       <div style={{ maxWidth: '50%' }}>
         <h1 style={{
           fontFamily: '"Marion", serif',
-          fontWeight: 400, // Fixed typo: '400px' to 400
+          fontWeight: 400, 
           fontSize: '80px',
           lineHeight: '115px',
           color: '#5352ED',
