@@ -103,10 +103,12 @@ const Discover = () => {
           fontFamily: '"Gothic A1", sans-serif',
           fontWeight: 600,
           fontSize: '16px',}}>
-                  <span style={{ color: '#CB602B' }}>By</span> {book.author}
+                  <span style={{ color: '#CB602B',
+                    marginRight:'0.5rem',
+                   }}>By </span> {book.author}
                 </p>
-                <div className="absolute top-[170px] right-3">
-                  <FontAwesomeIcon icon={faBookmark} style={{ color: "#c5612b", fontSize: '20px' }} onClick={handleFavoriteClick} />
+                <div className="absolute top-[420px] right-8">
+                  <FontAwesomeIcon icon={faBookmark} style={{ color: "#c5612b", fontSize: '24px' }} onClick={handleFavoriteClick} />
                 </div>
               </div>
             ))}
@@ -144,10 +146,10 @@ const Discover = () => {
           fontFamily: '"Gothic A1", sans-serif',
           fontWeight: 600,
           fontSize: '16px',}}>
-                  <span style={{ color: '#CB602B' }}>By</span> {book.author}
+                  <span style={{ color: '#CB602B', marginRight:'0.5rem', }}>By </span> {book.author}
                 </p>
-                <div className="absolute top-[170px] right-3">
-                  <FontAwesomeIcon icon={faBookmark} style={{ color: "#c5612b", fontSize: '20px' }} onClick={handleFavoriteClick} />
+                <div className="absolute top-[420px] right-8">
+                  <FontAwesomeIcon icon={faBookmark} style={{ color: "#c5612b", fontSize: '24px' }} onClick={handleFavoriteClick} />
                 </div>
               </div>
             ))}
