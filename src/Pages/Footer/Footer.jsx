@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="absolute w-full bg-[#121212] text-white p-[50px_100px] font-['Gothic_A1'] flex flex-col justify-between h-[400px] top-[2636.65px] left-0">
+    <div className="w-full bg-[#121212] text-white p-[50px_100px] font-['Gothic_A1'] flex flex-col justify-between h-[400px] mb-0 left-0">
       {/* Footer Content */}
       <div className="flex justify-between w-full">
         {/* LibraDream Description */}
