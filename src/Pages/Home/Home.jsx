@@ -4,6 +4,9 @@ import WhyChooseUs from '../../Components/WhyChooseUs/WhyChooseUs';
 import Explore from '../Explore/Explore';
 import Discover from '../Discover/Discover';
 import Footer from '../Footer/Footer';
+import Launch from '../Launch/Launch';
+
+
 
 const Home = () => (
   <div className="bg-white flex flex-col" style={{ fontFamily: '"Marion", serif' }}>
@@ -82,7 +85,10 @@ const Home = () => (
     <Discover />
     {/* Explore */}
     <Explore />
-   <Footer />
+        {/* Explore */}
+   <Launch />
+        {/* Footer */}
+    <Footer />
   </div>
 
 );
