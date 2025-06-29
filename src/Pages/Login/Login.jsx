@@ -1,17 +1,22 @@
-import React from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import backgroundImage from '/picart2.png';
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = () => {
+  const [credentials, setCredentials] = useState({ username: '', password: '' });
+  const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  };
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-
-    // TODO: Add actual authentication logic here
-
-    setIsLoggedIn(true);           // Simulate successful login
-    navigate('/Mood/Mood.jsx');       // Redirect to after-login page
+    // Dummy login: no validation, just log in
+    await login({ username: credentials.username || 'guest' }); // Default to 'guest' if empty
+    navigate('/mood', { replace: true });
   };
 
   return (
@@ -29,7 +34,6 @@ const Login = ({ setIsLoggedIn }) => {
       >
         <div className="mb-6 text-center">
           <h1
-            className="relative"
             style={{
               fontFamily: 'Marion',
               fontWeight: 400,
@@ -43,7 +47,6 @@ const Login = ({ setIsLoggedIn }) => {
             Digital Library of Dreams
           </h1>
           <p
-            className="relative"
             style={{
               fontFamily: 'Gothic A1',
               fontWeight: 400,
@@ -76,22 +79,6 @@ const Login = ({ setIsLoggedIn }) => {
           >
             LOGIN
           </h2>
-          <p
-            className="mt-1"
-            style={{
-              fontFamily: 'Marion',
-              fontWeight: 400,
-              fontSize: '14px',
-              lineHeight: '20px',
-              letterSpacing: '0',
-              textAlign: 'center',
-              color: '#949CA9',
-            }}
-          >
-            Let's build something great
-          </p>
-
-          {/* ✅ Login form logic here */}
           <form className="mt-4" onSubmit={handleLogin}>
             <div className="mb-4">
               <label
@@ -109,7 +96,10 @@ const Login = ({ setIsLoggedIn }) => {
               </label>
               <input
                 type="text"
+                name="username"
                 placeholder="Enter here..."
+                value={credentials.username}
+                onChange={handleChange}
                 className="w-full p-2 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 style={{
                   fontFamily: 'Gothic A1',
@@ -138,7 +128,10 @@ const Login = ({ setIsLoggedIn }) => {
               <div className="relative">
                 <input
                   type="password"
+                  name="password"
                   placeholder="Enter password..."
+                  value={credentials.password}
+                  onChange={handleChange}
                   className="w-full p-2 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   style={{
                     fontFamily: 'Gothic A1',
@@ -151,9 +144,8 @@ const Login = ({ setIsLoggedIn }) => {
                 />
                 <button
                   type="button"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500" // Fixed 'OCR' typo
                 >
-                  {/* Eye icon */}
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -187,24 +179,8 @@ const Login = ({ setIsLoggedIn }) => {
             >
               Login
             </button>
-            <p
-              className="mt-2 text-right"
-              style={{
-                fontFamily: 'Gothic A1',
-                fontWeight: 400,
-                fontSize: '14px',
-                lineHeight: '22px',
-                letterSpacing: '0',
-                color: '#121212',
-              }}
-            >
-              <Link to="/forgot-password" className="text-[#4242BE] hover:underline">
-                Forgot Password?
-              </Link>
-            </p>
           </form>
 
-          {/* Social login */}
           <div className="mt-4 space-y-2">
             <button
               className="w-full p-2 bg-white border-[#707070] rounded-md flex items-center justify-center hover:bg-gray-50 transition duration-200"

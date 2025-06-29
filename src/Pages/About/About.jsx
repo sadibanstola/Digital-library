@@ -172,130 +172,152 @@ const About = () => {
 {/************************** cards ************************/}
 <div
   className="absolute"
- style={{
-        display: 'flex',
-        justifyContent: 'center',
-        gap: '31px',
-        flexWrap: 'wrap',
-        width:'1238px',
-        height: '443.57px',
-        top:'1600px',
-        left:'101px',
+  style={{
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '31px',
+    flexWrap: 'wrap',
+    width: '1238px',
+    height: '443.57px',
+    top: '1600px',
+    left: '101px',
+  }}
+>
+  {/* Card 1: Thousands of Free eBooks */}
+  <div
+    className="bg-white hover:bg-[#E5E5E5] transition-colors duration-300 group"
+    style={{
+      maxWidth: '392px',
+      height: '460px',
+      padding: '20px',
+      borderRadius: '6px',
+      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+    }}
+  >
+    <img
+      src="/book.png"
+      alt="Curated Content"
+      className="w-full h-auto mb-[15px] transform group-hover:scale-90 transition-transform duration-300"
+      style={{
+        width: '100%',
+        height: 'auto',
+        marginBottom: '15px',
+      }}
+    />
+    <h3
+      style={{
+        fontFamily: '"Gothic A1", sans-serif',
+        fontWeight: 600,
+        fontSize: '20px',
+        color: '#121212',
+        marginBottom: '10px',
+      }}
+    >
+      Thousands of Free eBooks
+    </h3>
+    <p
+      style={{
+        fontFamily: '"Gothic A1", sans-serif',
+        fontWeight: 400,
+        fontSize: '16px',
+        color: '#121212CC',
+        lineHeight: '1.5',
+      }}
+    >
+      Access a vast collection of stories across every genre, completely free.
+    </p>
+  </div>
+  {/* Card 2: Save & Organize */}
+  <div
+    className="bg-white hover:bg-[#E5E5E5] transition-colors duration-300 group"
+    style={{
+      maxWidth: '392px',
+      height: '460px',
+      padding: '20px',
+      borderRadius: '6px',
+      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+    }}
+  >
+    <img
+      src="/person.png"
+      alt="Save & Organize"
+      className="w-full h-auto mb-[15px] transform group-hover:scale-90 transition-transform duration-300"
+      style={{
+        width: '100%',
+        height: 'auto',
+        marginBottom: '15px',
+      }}
+    />
+    <h3
+      style={{
+        fontFamily: '"Gothic A1", sans-serif',
+        fontWeight: 600,
+        fontSize: '20px',
+        color: '#121212',
+        marginBottom: '10px',
+      }}
+    >
+      Ads Free, Clean Interface
+    </h3>
+    <p
+      style={{
+        fontFamily: '"Gothic A1", sans-serif',
+        fontWeight: 400,
+        fontSize: '16px',
+        color: '#121212CC',
+        lineHeight: '1.5',
+        width: '274px',
+      }}
+    >
+      Enjoy a peaceful reading experience with zero distractions.
+    </p>
+  </div>
+  {/* Card 3: Mood Discovery */}
+  <div
+    className="bg-white hover:bg-[#E5E5E5] transition-colors duration-300 group"
+    style={{
+      maxWidth: '392px',
+      height: '460px',
+      padding: '20px',
+      borderRadius: '6px',
+      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+    }}
+  >
+    <img
+      src="/family.png"
+      alt="Mood Discovery"
+      className="w-full h-auto mb-[15px] transform group-hover:scale-90 transition-transform duration-300"
+      style={{
+        width: '100%',
+        height: 'auto',
+        marginBottom: '15px',
+      }}
+    />
+    <h3
+      style={{
+        fontFamily: '"Gothic A1", sans-serif',
+        fontWeight: 600,
+        fontSize: '20px',
+        color: '#121212',
+        marginBottom: '10px',
+      }}
+    >
+      For All Types of Readers
+    </h3>
+    <p
+      style={{
+        fontFamily: '"Gothic A1", sans-serif',
+        fontWeight: 400,
+        fontSize: '16px',
+        color: '#121212CC',
+        lineHeight: '1.5',
+      }}
+    >
+      Designed for students, casual readers, and lifelong learners alike.
+    </p>
+  </div>
+</div>
 
-      }}>
-<div style={{
-          maxWidth: '392px',
-          height:'460px',
-          padding: '20px',
-          backgroundColor: '#FFFFFF',
-          borderRadius: '6px',
-          boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
-        }}>
-          <img
-            src="/book.png" 
-            alt="Curated Content"
-            style={{
-              width: '100%',
-              height: 'auto',
-              marginBottom: '15px'
-            }}
-          />
-          <h3 style={{
-            fontFamily: '"Gothic A1", sans-serif',
-            fontWeight: 600,
-            fontSize: '20px',
-            color: '#121212',
-            marginBottom: '10px',
-           
-          }}>
-            Thousands of Free eBooks
-          </h3>
-          <p style={{
-           fontFamily: '"Gothic A1", sans-serif',
-            fontWeight: 400,
-            fontSize: '16px',
-            color: '#121212CC',
-            lineHeight: '1.5'
-          }}>
-            Access a vast collection of stories across every genre, completely free.
-          </p>
-        </div>
-        {/* Card 2: Save & Organize */}
-        <div style={{
-         maxWidth: '392px',
-          height:'460px',
-          padding: '20px',
-          backgroundColor: '#FFFFFF',
-          borderRadius: '6px',
-          boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
-        }}>
-          <img
-            src="/person.png" 
-            alt="Save & Organize"
-            style={{
-              width: '100%',
-              height: 'auto',
-              marginBottom: '15px'
-            }}
-          />
-          <h3 style={{
-            fontFamily: '"Gothic A1", sans-serif',
-            fontWeight: 600,
-            fontSize: '20px',
-            color: '#121212',
-            marginBottom: '10px'
-          }}>
-            Ads Free, Clean Interface
-          </h3>
-          <p style={{
-            fontFamily: '"Gothic A1", sans-serif',
-            fontWeight: 400,
-            fontSize: '16px',
-            color: '#121212CC',
-            lineHeight: '1.5',
-            width:'274px',
-          }}>
-            Enjoy a peaceful reading experience with zero distractions.
-          </p>
-        </div>
-        {/* Card 3: Mood Discovery */}
-        <div style={{
-          maxWidth: '392px',
-          height:'460px',
-          padding: '20px',
-          backgroundColor: '#FFFFFF',
-          borderRadius: '6px',
-          boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
-        }}>
-          <img
-            src="/family.png" 
-            alt="Mood Discovery"
-            style={{
-              width: '100%',
-              height: 'auto',
-              marginBottom: '15px'
-            }}
-          />
-          <h3 style={{
-            fontFamily: '"Gothic A1", sans-serif',
-            fontWeight: 600,
-            fontSize: '20px',
-            color: '#121212',
-            marginBottom: '10px'
-          }}>
-           For All Types of Readers
-          </h3>
-          <p style={{
-            fontFamily: '"Gothic A1", sans-serif',
-            fontWeight: 400,
-            fontSize: '16px',
-            color: '#121212CC',
-            lineHeight: '1.5'
-          }}>
-           Designed for students, casual readers, and lifelong learners alike.
-          </p>
-        </div>
-     </div>
 <div
          className='absolute'
         style={{

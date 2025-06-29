@@ -1,21 +1,24 @@
-import React, { useState } from 'react';
+// src/App.jsx
 import { useLocation } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { FavoritesProvider } from './context/FavoritesContext'; // Import FavoritesProvider
 import Navbar from './Components/Navbar/Navbar.jsx';
 import AppRoutes from './Routes.jsx';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Start as not logged in
-
   const location = useLocation();
-  const hideNavbarRoutes = ['/login', '/signup', '/forgot-password', '/terms', '/privacy'];
+  const hideNavbarRoutes = ['/login', '/signup', '/mood', '/account'];
   const showNavbar = !hideNavbarRoutes.includes(location.pathname);
 
   return (
-    <div className="App">
-      {showNavbar && <Navbar />}
-      {/* Pass both login state & setter to routes */}
-      <AppRoutes isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-    </div>
+    <AuthProvider>
+      <FavoritesProvider> {/* Wrap with FavoritesProvider */}
+        <div className="App">
+          {showNavbar && <Navbar />}
+          <AppRoutes />
+        </div>
+      </FavoritesProvider>
+    </AuthProvider>
   );
 }
 
