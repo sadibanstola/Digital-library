@@ -1,14 +1,20 @@
 // src/components/BookCard.jsx
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom'; // Add useNavigate
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { FavoritesContext } from '../context/FavoritesContext';
 
 const BookCard = ({ book, showLoginPopup = false }) => {
   const { favorites, addFavorite } = useContext(FavoritesContext);
+  const navigate = useNavigate(); // Initialize navigate
+
+  // Define clickable book IDs
+  const clickableBookIds = [3, 4, 10]; // IDs for Harry Potter, The Hobbit, Red, White & Royal Blue
 
   const handleFavoriteClick = (event) => {
     event.preventDefault();
+    event.stopPropagation(); // Prevent triggering card click
     if (showLoginPopup) {
       const popup = document.createElement('div');
       popup.textContent = 'Please login to add to favorites.';
@@ -58,8 +64,20 @@ const BookCard = ({ book, showLoginPopup = false }) => {
     (fav) => fav.title === book.title && fav.author === book.author
   );
 
+  // Handle card click for navigation
+  const handleCardClick = () => {
+    if (clickableBookIds.includes(book.id)) {
+      navigate(`/book/${book.id}`);
+    }
+  };
+
   return (
-    <div className="bg-white p-3 shadow border border-[#5352ED] max-w-[370px] mx-auto relative">
+    <div
+      className={`bg-white p-3 shadow border border-[#5352ED] max-w-[370px] mx-auto relative ${
+        clickableBookIds.includes(book.id) ? 'cursor-pointer hover:shadow-lg' : ''
+      }`}
+      onClick={handleCardClick}
+    >
       <img
         src={book.image}
         alt={book.title}

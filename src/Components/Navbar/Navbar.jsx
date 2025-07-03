@@ -104,64 +104,29 @@ const Navbar = () => {
             LibraDream
           </span>
         </div>
+        
         <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
           <Link
             to="/"
-            style={{
-              fontFamily: '"Gothic A1", sans-serif',
-              fontWeight: 500,
-              fontSize: '16px',
-              lineHeight: '100%',
-              letterSpacing: '0%',
-              color: '#121212',
-              textDecoration: 'none',
-            }}
+            className="font-['Gothic_A1'] font-medium text-base leading-none text-[#121212] no-underline relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-[#5352ED] after:transition-all after:duration-300 hover:after:w-full"
           >
             Home
           </Link>
           <Link
             to="/about"
-            style={{
-              fontFamily: '"Gothic A1", sans-serif',
-              fontWeight: 500,
-              fontSize: '16px',
-              lineHeight: '100%',
-              letterSpacing: '0%',
-              color: '#121212',
-              textDecoration: 'none',
-            }}
+            className="font-['Gothic_A1'] font-medium text-base leading-none text-[#121212] no-underline relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-[#5352ED] after:transition-all after:duration-300 hover:after:w-full"
           >
             About
           </Link>
           <Link
             to="/mylibrary"
-            style={{
-              fontFamily: '"Gothic A1", sans-serif',
-              fontWeight: 500,
-              fontSize: '16px',
-              lineHeight: '100%',
-              letterSpacing: '0%',
-              color: '#121212',
-              textDecoration: 'none',
-            }}
+            className="font-['Gothic_A1'] font-medium text-base leading-none text-[#121212] no-underline relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-[#5352ED] after:transition-all after:duration-300 hover:after:w-full"
           >
             My Library
           </Link>
-          <button 
+          <button
             onClick={toggleDiscover}
-            style={{
-              fontFamily: '"Gothic A1", sans-serif',
-              fontWeight: 500,
-              fontSize: '16px',
-              lineHeight: '100%',
-              letterSpacing: '0%',
-              color: '#121212',
-              textDecoration: 'none',
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              padding: 0,
-            }}
+            className="font-['Gothic_A1'] font-medium text-base leading-none text-[#121212] no-underline relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-[#5352ED] after:transition-all after:duration-300 hover:after:w-full bg-transparent border-none cursor-pointer p-0"
           >
             Discover
           </button>
@@ -180,7 +145,7 @@ const Navbar = () => {
             }}
           />
           {isLoggedIn ? (
-            <div className='ml-10' onClick={toggleProfile}>
+            <div className="ml-10" onClick={toggleProfile}>
               <FontAwesomeIcon icon={faSignal} rotation={270} size="lg" />
             </div>
           ) : (
@@ -218,15 +183,15 @@ const Navbar = () => {
             <div className="flex flex-col items-center justify-center mb-11 mt-8">
               <img src="/sadi.png" alt="Profile" className="w-20 h-20 rounded-full mb-4 border-2 border-[#5352ED]" />
               <div className="text-center">
-                <h2 className="text-2xl ">Welcome Back,</h2>
-                <p className="text-xl ">Sadi Banstola</p>
+                <h2 className="text-2xl">Welcome Back,</h2>
+                <p className="text-xl">Sadi Banstola</p>
                 <p className="text-lg text-gray-400">@sadi</p>
               </div>
             </div>
             <ul className="space-y-12">
-              <li><Link to="/account" className="flex items-center text-xl hover:text-gray-300 " onClick={toggleProfile}><FontAwesomeIcon icon={faUser} className="mr-4 text-xl" /> Account Details</Link></li>
-              <li><Link to="/my-library" className="flex items-center text-xl hover:text-gray-300 " onClick={toggleProfile}><FontAwesomeIcon icon={faBook} className="mr-4 text-xl" /> My Library</Link></li>
-              <li><Link to="/discover-feed" className="flex items-center text-xl hover:text-gray-300 " onClick={toggleProfile}><FontAwesomeIcon icon={faMagnifyingGlass} className="mr-4 text-xl" /> Discover Feed</Link></li>
+              <li><Link to="/account" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faUser} className="mr-4 text-xl" /> Account Details</Link></li>
+              <li><Link to="/mylibrary" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faBook} className="mr-4 text-xl" /> My Library</Link></li>
+              <li><Link to="/discover-feed" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faMagnifyingGlass} className="mr-4 text-xl" /> Discover Feed</Link></li>
               <li><Link to="/about" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faCircleInfo} className="mr-4 text-xl" /> About Us</Link></li>
               <li><Link to="/privacy" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faShield} className="mr-4 text-xl" /> Privacy & Terms</Link></li>
               <li><Link to="/home" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faSignOutAlt} className="mr-4 text-xl" /> Logout</Link></li>
@@ -235,11 +200,9 @@ const Navbar = () => {
         )}
       </motion.nav>
 
-      {/* Discover Panel */}
       <AnimatePresence>
         {isDiscoverOpen && (
           <>
-            {/* Backdrop with blur */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -248,7 +211,6 @@ const Navbar = () => {
               onClick={toggleDiscover}
             />
             
-            {/* Discover Panel Content */}
             <motion.div
               initial={{ y: '-100%' }}
               animate={{ y: '80px' }}
@@ -258,7 +220,6 @@ const Navbar = () => {
               style={{ width: '900px', height: '300px' }}
             >
               <div className="h-full flex max-w-[1300px] mx-auto">
-                {/* Left sidebar with tabs */}
                 <div className="w-1/4 bg-white p-6 relative">
                   <div className="absolute top-6 bottom-6 right-0 w-[2px] bg-[#5352EDA6]"></div>
                   <h3 className="text-lg font-semibold mb-6"></h3>
@@ -277,26 +238,21 @@ const Navbar = () => {
                   </ul>
                 </div>
 
-                {/* Main content area */}
-                <div className="w-3/4 p-5 relative"style={{
-          fontFamily: '"Gothic A1", sans-serif',
-         }}>
+                <div className="w-3/4 p-5 relative" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
                   <div className="absolute top-6 right-16">
                     <button 
                       onClick={handleSeeMore}
-                      className="text-[#CB602B] font-medium flex items-center "
+                      className="text-[#CB602B] font-medium flex items-center"
                     >
                       See more
                       <FontAwesomeIcon icon={faChevronRight} className="ml-1.5" size="xs" />
                     </button>
                   </div>
 
-                  {/* Content based on active tab */}
                   <div className="grid grid-cols-3 gap-2 h-full pt-6">
                     {activeTab === 'Audio/Video' ? (
                       <div className="col-span-3 flex flex-col items-center justify-center h-full">
-                        <p className="text-5xl font-semibold mb-2 text-[#CB602B]"style={{
-          fontFamily: '"Gothic A1", sans-serif',}}>Launching Soon</p>
+                        <p className="text-5xl font-semibold mb-2 text-[#CB602B]" style={{ fontFamily: '"Gothic A1", sans-serif' }}>Launching Soon</p>
                       </div>
                     ) : (
                       booksData[activeTab].map((book, index) => (

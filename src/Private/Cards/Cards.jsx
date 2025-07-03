@@ -1,6 +1,6 @@
 // src/Private/Cards/Cards.jsx
 import React from 'react';
-import BookCard from '../../components/BookCard'; // Import BookCard
+import BookCard from '../../Components/BookCard'; // Import BookCard
 import Footer from '../../Pages/Footer/Footer';
 
 const Cards = () => {

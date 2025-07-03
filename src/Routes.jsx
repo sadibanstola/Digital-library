@@ -11,6 +11,7 @@ import MyLibrary from './Pages/MyLibrary/MyLibrary.jsx';
 import Privacy from './Private/Privacy/Privacy.jsx';
 import Account from './Private/Account/Account.jsx';
 import Cards from './Private/Cards/Cards.jsx';
+import BookDetails from './Private/BookDetails/BookDetails.jsx';
 
 const ProtectedRoute = () => {
   const { isLoggedIn } = useAuth();
@@ -36,6 +37,7 @@ const AppRoutes = () => {
         <Route path="/account" element={<Account />} />
         <Route path="/cards" element={<Cards />} />
         <Route path="/genre/:genreName" element={<GenreBooks />} /> {/* New route */}
+        <Route path="/book/:bookId" element={<BookDetails  />} /> {/* New route */}
       </Route>
 
       {/* Fallback */}
