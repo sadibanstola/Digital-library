@@ -1,7 +1,7 @@
 // src/Pages/MyLibrary/MyLibrary.jsx
 import React, { useContext } from 'react';
 import { FavoritesContext } from '../../context/FavoritesContext';
-import BookCard from '../../components/BookCard';
+import BookCard from '../../Components/BookCard';
 import Footer from '../Footer/Footer';
 
 const MyLibrary = () => {
@@ -23,7 +23,7 @@ const MyLibrary = () => {
           No books in your library yet.
         </p>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-5">
           {favorites.map((book, index) => (
             <BookCard key={index} book={book} />
           ))}

@@ -12,6 +12,8 @@ import Privacy from './Private/Privacy/Privacy.jsx';
 import Account from './Private/Account/Account.jsx';
 import Cards from './Private/Cards/Cards.jsx';
 import BookDetails from './Private/BookDetails/BookDetails.jsx';
+import AuthorSearch from './Private/AuthorSearch/AuthorSearch.jsx';
+import Notifications from './Private/Notifications/Notifications.jsx';
 
 const ProtectedRoute = () => {
   const { isLoggedIn } = useAuth();
@@ -36,8 +38,10 @@ const AppRoutes = () => {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/account" element={<Account />} />
         <Route path="/cards" element={<Cards />} />
+        <Route path="/author-search" element={<AuthorSearch />} />
         <Route path="/genre/:genreName" element={<GenreBooks />} /> {/* New route */}
         <Route path="/book/:bookId" element={<BookDetails  />} /> {/* New route */}
+        <Route path="/notifications" element={<Notifications />} />
       </Route>
 
       {/* Fallback */}

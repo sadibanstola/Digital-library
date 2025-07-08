@@ -29,7 +29,11 @@ const Navbar = () => {
 
   const handleSeeMore = () => {
     if (isLoggedIn) {
-      navigate('/cards');
+      if (activeTab === 'Author') {
+        navigate('/author-search');
+      } else {
+        navigate('/cards');
+      }
     } else {
       navigate('/signup');
     }
@@ -178,7 +182,9 @@ const Navbar = () => {
             <div className="flex justify-between items-center mb-6">
               <button className="text-3xl" onClick={toggleProfile}>×</button>
               <h2 className="text-3xl font-semibold flex-1 text-center">Settings</h2>
-              <FontAwesomeIcon icon={faBell} className="text-2xl" />
+              <Link to="/notifications" onClick={toggleProfile}>
+              <FontAwesomeIcon icon={faBell} className="text-2xl cursor-pointer hover:text-gray-300" />
+            </Link>
             </div>
             <div className="flex flex-col items-center justify-center mb-11 mt-8">
               <img src="/sadi.png" alt="Profile" className="w-20 h-20 rounded-full mb-4 border-2 border-[#5352ED]" />
@@ -257,8 +263,8 @@ const Navbar = () => {
                     ) : (
                       booksData[activeTab].map((book, index) => (
                         <div key={index} className="p-3 hover:bg-gray-50 rounded-lg">
-                          <p className="text-sm text-black">{book.name}</p>
-                          <p className="text-sm text-black mt-1">{book.author}</p>
+                          <p className="text-sm text-black">{book.name || book.author}</p>
+                          {}
                         </div>
                       ))
                     )}

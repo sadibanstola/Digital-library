@@ -5,18 +5,17 @@ import Footer from '../../Pages/Footer/Footer';
 
 const Cards = () => {
   const trendingBooks = [
-    { title: 'Hidden City', author: 'MS Lawson', image: 'Hidden.png' },
-    { title: 'We Are Voulhire', author: 'Matthew Tysz', image: 'voulhire.png' },
-    { title: 'The Unveiling', author: 'Tamara Leigh', image: 'unveiling.png' },
-    { title: 'A Convenient Risk', author: 'Sara R Turnquist', image: 'risk.png' },
+    { title: 'Hidden City', author: 'MS Lawson', image: '/Hidden.png' },
+    { title: 'We Are Voulhire', author: 'Matthew Tysz', image: '/voulhire.png' },
+    { title: 'The Unveiling', author: 'Tamara Leigh', image: '/unveiling.png' },
+    { title: 'A Convenient Risk', author: 'Sara R Turnquist', image: '/risk.png' },
     { title: 'A Voyage to Arcturus', author: 'David Lindsay', image: 'vogage.png' },
     { title: 'The Phoenix and the Carpet', author: 'Edith Nesbit', image: 'phoenix.png' },
-    { title: 'Hidden City', author: 'MS Lawson', image: 'Hidden.png' },
-    { title: 'We Are Voulhire', author: 'Matthew Tysz', image: 'voulhire.png' },
-    { title: 'The Unveiling', author: 'Tamara Leigh', image: 'unveiling.png' },
-    { title: 'A Convenient Risk', author: 'Sara R Turnquist', image: 'risk.png' },
-    { title: 'A Voyage to Arcturus', author: 'David Lindsay', image: 'vogage.png' },
-    { title: 'The Phoenix and the Carpet', author: 'Edith Nesbit', image: 'phoenix.png' },
+    { title: 'The Hating Game', author: 'Sally Thorne', image: '/hate.png' },
+    { title: 'Me Before You', author: 'Jojo Moyes', image: '/me.png' },
+    { title: 'Red, White & Royal Blue', author: 'Casey McQuiston', image: '/red.png' },
+    { title: 'It Ends With Us', author: 'Colleen Hoover', image: '/end.png' },
+    { title: 'The Name of the Wind', author: 'Patrick Rothfuss', image: '/wind.png' },
   ];
 
   return (
