@@ -1,108 +1,120 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faBookmark, faCalendarAlt, faBullseye, faStar, faUsers } from '@fortawesome/free-solid-svg-icons';
-import Footer from '../../Pages/Footer/Footer';
+import { useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faBell,
+  faBookmark,
+  faCalendarAlt,
+  faBullseye,
+  faStar,
+  faUsers,
+  faInfoCircle,
+} from "@fortawesome/free-solid-svg-icons"
+import Footer from "../../Pages/Footer/Footer"
 
 const Notifications = () => {
+  const [notifications, setNotifications] = useState([
+    {
+      id: "new-book-alerts",
+      icon: faBell,
+      title: "New Book Alerts",
+      description: "Get notified when new books are added to your favorite genres.",
+      enabled: false,
+    },
+    {
+      id: "bookmark-sync",
+      icon: faBookmark,
+      title: "Bookmark Sync",
+      description: "Get notified when your are synced across devices",
+      enabled: true,
+    },
+    {
+      id: "weekly-reading-reminder",
+      icon: faCalendarAlt,
+      title: "Weekly Reading Reminder",
+      description: "Receive a weekly reminder to encourage your reading goals.",
+      enabled: false,
+    },
+    {
+      id: "reading-goals",
+      icon: faBullseye,
+      title: "Reading Goals",
+      description: "Track your reading progress and achievement notifications",
+      enabled: true,
+    },
+    {
+      id: "app-updates",
+      icon: faStar,
+      title: "App Updates",
+      description: "Get updates on new features and improvements to the app.",
+      enabled: false,
+    },
+    {
+      id: "community-activity",
+      icon: faUsers,
+      title: "Community Activity",
+      description: "Updates on book clubs and community discussions.",
+      enabled: false,
+    },
+  ])
+
+  const handleToggle = (id) => {
+    setNotifications((prev) => prev.map((item) => (item.id === id ? { ...item, enabled: !item.enabled } : item)))
+  }
+
   return (
-    <div className="container ml-[100px] p-6 pt-[150px] w-[800px]">
+    <section>
+    <div className="container ml-[100px] p-6 pt-[150px] w-[800px]" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
       <h2 className="text-2xl font-bold">Notifications</h2>
       <p className="text-gray-600 mt-1">Manage how LibraDream notifies you</p>
-      
-      <div className="mt-4">
-        <div className="flex items-center justify-between p-4 border-b">
-          <div>
-            <FontAwesomeIcon icon={faBell} className="text-xl" />
-            <div className="ml-3">
-              <strong className="block">New Book Alerts</strong>
-              <p className="text-sm text-gray-600">Get notified when new books are added to your favorite genres.</p>
-            </div>
-          </div>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" className="sr-only peer" />
-            <div className="w-12 h-8 bg-[#00000040] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 border border-[#5352ED] peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[1px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-7 after:w-7 after:transition-all dark:border-gray-600 peer-checked:bg-[#5352ED]"></div>
-          </label>
-        </div>
 
-        <div className="flex items-center justify-between p-4 border-b bg-blue-50">
-          <div>
-            <FontAwesomeIcon icon={faBookmark} className="text-xl" />
-            <div className="ml-3">
-              <strong className="block">Bookmark Sync</strong>
-              <p className="text-sm text-gray-600">Get notified when your are synced across devices.</p>
+      <div className="mt-8">
+        {notifications.map((item, index) => (
+          <div
+            key={item.id}
+            className={`flex items-center justify-between py-6 ${
+              index !== notifications.length - 1 ? "" : ""
+            }`}
+          >
+            <div className="flex items-start">
+              <FontAwesomeIcon icon={item.icon} className="text-xl mt-1 mr-4" />
+              <div>
+                <strong className="block text-gray-900">{item.title}</strong>
+                <p className="text-sm font-normal text-gray-600 mt-1">{item.description}</p>
+              </div>
             </div>
-          </div>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" className="sr-only peer"/>
-            <div className="w-12 h-8 bg-[#00000040] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 border border-[#5352ED] peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-7 after:w-7 after:transition-all dark:border-gray-600 peer-checked:bg-[#5352ED]"></div>
-          </label>
-        </div>
 
-        <div className="flex items-center justify-between p-4 border-b">
-          <div>
-            <FontAwesomeIcon icon={faCalendarAlt} className="text-xl" />
-            <div className="ml-3">
-              <strong className="block">Weekly Reading Reminder</strong>
-              <p className="text-sm text-gray-600">Receive a weekly reminder to encourage your reading goals.</p>
-            </div>
+            <button
+              onClick={() => handleToggle(item.id)}
+              className={`relative inline-flex h-9 w-16 items-center rounded-md border-[1px] shadow-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300 ${
+                item.enabled ? "bg-[#5352ED] border-[#5352ED]" : "bg-gray-200 border-[#5352ED] "
+              }`}
+            >
+              <span
+                className={`inline-block h-7 w-7 transform rounded-full bg-white shadow-lg transition-transform ${
+                  item.enabled ? "translate-x-8" : "translate-x-0"
+                }`}
+              />
+            </button>
           </div>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" className="sr-only peer" />
-            <div className="w-12 h-8 bg-[#00000040] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 border border-[#5352ED] peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-7 after:w-7 after:transition-all dark:border-gray-600 peer-checked:bg-[#5352ED]"></div>
-          </label>
-        </div>
-
-        <div className="flex items-center justify-between p-4 border-b bg-blue-50">
-          <div>
-            <FontAwesomeIcon icon={faBullseye} className="text-xl" />
-            <div className="ml-3">
-              <strong className="block">Reading Goals</strong>
-              <p className="text-sm text-gray-600">Track your reading progress and achievement notifications.</p>
-            </div>
-          </div>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" className="sr-only peer"/>
-            <div className="w-12 h-8 bg-[#00000040] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 border border-[#5352ED]peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#5352ED]"></div>
-          </label>
-        </div>
-
-        <div className="flex items-center justify-between p-4 border-b">
-          <div>
-            <FontAwesomeIcon icon={faStar} className="text-xl" />
-            <div className="ml-3">
-              <strong className="block">App Updates</strong>
-              <p className="text-sm text-gray-600">Get updates on new features and improvements to the app.</p>
-            </div>
-          </div>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" className="sr-only peer" />
-            <div className="w-12 h-8 bg-[#00000040] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 border border-[#5352ED] peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#5352ED]"></div>
-          </label>
-        </div>
-
-        <div className="flex items-center justify-between p-4 border-b">
-          <div>
-            <FontAwesomeIcon icon={faUsers} className="text-xl" />
-            <div className="ml-3">
-              <strong className="block">Community Activity</strong>
-              <p className="text-sm text-gray-600">Updates on book clubs and community discussions.</p>
-            </div>
-          </div>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" className="sr-only peer" />
-            <div className="w-12 h-8 bg-[#00000040] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 border border-[#5352ED] peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#5352ED]"></div>
-          </label>
-        </div>
-
-        <div className="p-4 bg-blue-50 mt-4">
-          <p className="text-blue-700">Notification delivery</p>
-          <p className="text-sm text-blue-600">Notification will be delivered based on your device settings. You can change preferences in your device settings.</p>
-        </div>
+        ))}
       </div>
 
-      <Footer />
+      <div className="p-4 bg-blue-50 mt-8 rounded-lg">
+        <div className="flex items-start">
+          <FontAwesomeIcon icon={faInfoCircle} className="text-blue-600 mr-3 mt-0.5" />
+          <div>
+            <p className="text-blue-700 font-medium">Notification delivery</p>
+            <p className="text-sm text-blue-600 mt-1">
+              Notification will be delivered based on your device settings. You can change preferences in your device
+              settings.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  );
-};
+     <Footer />
+    </section>
+  )
+}
 
-export default Notifications;
+export default Notifications

@@ -27,25 +27,25 @@ const Explore = () => {
       name: "Jordon",
       review: "The design is so clean and calming. I actually enjoy scrolling through books again",
       date: "May 1, 2025",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/jodon.png?height=80&width=80",
     },
     {
-      name: "Sarah",
-      review: "Amazing collection of books! The interface is so user-friendly and I love the genre organization.",
-      date: "April 28, 2025",
-      image: "/placeholder.svg?height=80&width=80",
+      name: "Ankita",
+      review: "LibraDream feels like it knows me and I find something inspiring every time I log in.",
+      date: "May 12, 2025",
+      image: "/Frame 1116607927.png?height=80&width=80",
     },
     {
-      name: "Michael",
-      review: "This platform has completely changed how I discover new books. Highly recommended!",
-      date: "April 25, 2025",
-      image: "/placeholder.svg?height=80&width=80",
+      name: "Ravi",
+      review: "The design is so clean and calming. I actually enjoy scrolling through books again",
+      date: "May 4, 2025",
+      image: "/Ellipse 25.png?height=80&width=80",
     },
     {
-      name: "Emma",
-      review: "The reading experience is fantastic. Clean design and great book recommendations.",
-      date: "April 22, 2025",
-      image: "/placeholder.svg?height=80&width=80",
+      name: "Hannah Schmitt",
+      review: "I love how the website recommends stories and genres based on my interests and mood. It feels personal.",
+      date: "May 7, 2025",
+      image: "/Frame 1116607927-2.png?height=80&width=80",
     },
   ]
 
@@ -83,9 +83,9 @@ const Explore = () => {
   }
 
   return (
-    <div className="bg-[#F4F6FD]">
+    <div className="bg-[white] px-21 py-16">
       {/* Existing Genre Section */}
-      <section className="px-24 py-16 text-center">
+      <section className="px-5 py-7 text-center bg-[#F4F6FD]">
         <h2 className="text-4xl font-normal text-[#121212] mb-10" style={{ fontFamily: "Marion" }}>
           Explore by Genre
         </h2>
@@ -112,14 +112,14 @@ const Explore = () => {
       </section>
 
       {/* New Testimonials Section */}
-      <section className="px-24 py-16 text-center">
-        <h2 className="text-4xl font-normal text-[#121212] mb-16" style={{ fontFamily: "Marion" }}>
+      <section className="px-24 py-16 text-center bg-[#F4F6FD]" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
+        <h2 className="text-4xl font-normal text-[#121212] mb-14" style={{ fontFamily: "Marion" }}>
           What Our Readers Say
         </h2>
 
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           {/* Main testimonial content */}
-          <div className="bg-white rounded-3xl px-16 py-12 shadow-sm border border-gray-100 mx-16 min-h-[300px]">
+          <div className="bg-white  px-16 py-12 shadow-sm border border-gray-100 mx-16 min-h-[300px]">
             <div className="flex items-center justify-center gap-8 h-full">
               {/* Profile Image */}
               <img
@@ -130,11 +130,11 @@ const Explore = () => {
 
               {/* Content */}
               <div className="text-left">
-                <h3 className="text-3xl font-semibold text-[#121212] mb-4">{testimonials[currentTestimonial].name}</h3>
+                <h3 className="text-2xl font-normal text-[#121212] mb-2">{testimonials[currentTestimonial].name}</h3>
 
-                <p className="text-[#121212] text-lg leading-relaxed mb-6">{testimonials[currentTestimonial].review}</p>
+                <p className="text-[#121212] w-[560px] text-[16px] leading-relaxed mb-6 font-normal">{testimonials[currentTestimonial].review}</p>
 
-                <p className="text-base text-gray-600">{testimonials[currentTestimonial].date}</p>
+                <p className="text-[#121212] text-xs font-normal">{testimonials[currentTestimonial].date}</p>
               </div>
             </div>
           </div>
@@ -142,10 +142,10 @@ const Explore = () => {
           {/* Navigation arrows - positioned outside the container */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors"
+            className="absolute left-24 top-[200px] transform -translate-y-1/2 w-15 h-15 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors"
             aria-label="Previous testimonial"
           >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M19 12H5M12 19L5 12L12 5"
                 stroke="#666"
@@ -158,7 +158,7 @@ const Explore = () => {
 
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors"
+            className="absolute right-24 top-[200px] transform -translate-y-1/2 w-15 h-12 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors"
             aria-label="Next testimonial"
           >
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,7 +173,7 @@ const Explore = () => {
           </button>
         </div>
       </section>
-      
+
     </div>
   )
 }

@@ -17,7 +17,7 @@ const BookCard = ({ book, showLoginPopup = false }) => {
     event.stopPropagation(); // Prevent triggering card click
     if (showLoginPopup) {
       const popup = document.createElement('div');
-      popup.textContent = 'Please login to add to favorites.';
+      popup.textContent = 'Please login to add to library.';
       popup.style.position = 'absolute';
       popup.style.backgroundColor = '#333';
       popup.style.color = 'white';
@@ -40,7 +40,7 @@ const BookCard = ({ book, showLoginPopup = false }) => {
 
     const wasAdded = addFavorite(book);
     const popup = document.createElement('div');
-    popup.textContent = wasAdded ? 'Added to favorites!' : 'Removed from favorites!';
+    popup.textContent = wasAdded ? 'Added to library!' : 'Removed from library!';
     popup.style.position = 'absolute';
     popup.style.backgroundColor = '#333';
     popup.style.color = 'white';
