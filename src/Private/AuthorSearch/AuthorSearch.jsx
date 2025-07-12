@@ -11,15 +11,19 @@ const AuthorSearch = () => {
 
   // Sample book data (you can expand this or fetch from an API)
   const books = [
-    { id: 1, title: 'Me Before You', author: 'Jojo Moyes', image: '/me.png' },
-    { id: 2, title: 'The Hobbit', author: 'J.R.R. Tolkien', image: '/habbit.png' },
-    { id: 3, title: 'The Unveiling', author: 'Tamara Leigh', image: '/unveiling.png' },
-    { id: 4, title: 'Harry Potter', author: 'J.K. Rowling', image: '/harry.png' },
-    { id: 5, title: 'The Hating Game', author: 'Sally Thorne', image: '/hate.png' },
-    { id: 6, title: 'Hidden City', author: 'MS Lawson', image: '/Hidden.png' },
-    { id: 7, title: 'Red, White & Royal Blue', author: 'Casey McQuiston', image: '/red.png' },
-    { id: 8, title: 'It Ends With Us', author: 'Colleen Hoover', image: '/end.png' },
-    { id: 9, title: 'The Name of the Wind', author: 'Patrick Rothfuss', image: '/wind.png' },
+   
+  { id: 1, title: 'Me Before You', author: 'Jojo Moyes', image: '/me.png' },
+  { id: 4, title: 'The Hobbit', author: 'J.R.R. Tolkien', image: '/habbit.png' }, // Changed id: 2 to id: 4
+  { id: 5, title: 'The Unveiling', author: 'Tamara Leigh', image: '/unveiling.png' }, // Changed id: 3 to avoid conflict
+  { id: 3, title: 'Harry Potter', author: 'J.K. Rowling', image: '/harry.png' }, // Changed id: 4 to id: 3
+  { id: 6, title: 'The Hating Game', author: 'Sally Thorne', image: '/hate.png' }, // Changed id: 5 to avoid conflict
+  { id: 7, title: 'Hidden City', author: 'MS Lawson', image: '/Hidden.png' }, // Changed id: 6 to avoid conflict
+  { id: 10, title: 'Red, White & Royal Blue', author: 'Casey McQuiston', image: '/red.png' }, // Changed id: 7 to id: 10
+  { id: 8, title: 'It Ends With Us', author: 'Colleen Hoover', image: '/end.png' },
+  { id: 9, title: 'The Name of the Wind', author: 'Patrick Rothfuss', image: '/wind.png' },
+  { id: 2, title: 'We Are Voulhire', author: 'Matthew Tysz', image: '/voulhire.png' }, // Changed id: 1 to id: 2
+  { id: 11, title: 'A Convenient Risk', author: 'Sara R Turnquist', image: '/risk.png' }, // Changed id: 8 to avoid conflict
+  { id: 12, title: 'A Voyage to Arcturus', author: 'David Lindsay', image: '/vogage.png' }, // Changed id: 9 to avoid conflict
   ];
 
   // Filter books based on search term

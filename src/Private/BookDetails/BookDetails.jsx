@@ -81,20 +81,23 @@ const BookDetails = () => {
             <div>
               <h2 className="text-3xl font-medium mb-2">{book.title}</h2>
               <p className="text-gray-600 text-center py-2 bg-gray-100 rounded-2xl mb-4 w-[200px]">by {book.author}</p>
-              <button className="bg-[#CB602B] text-white px-11 py-2 rounded mb-2 mt-20">Read</button>
+              <button
+             onClick={() => navigate(`/read/${book.id}`)}
+             className="bg-[#CB602B] text-white px-11 py-2 rounded mb-2 mt-20">Read</button>
+
             </div>
           </div>
 
           <div className="flex space-x-7 border border-[#DE8443] p-4 mb-6 w-[500px] h-[100px] items-center justify-between">
-            <button className="flex flex-col items-center text-gray-600 hover:text-gray-800 transition-colors">
+            <button className="flex flex-col items-center text-[black] hover:text-gray-800 transition-colors">
               <FontAwesomeIcon icon={faFlag} className="text-lg mb-1" />
               <span className="text-xl font-light">Report</span>
             </button>
-            <button className="flex flex-col items-center text-gray-600 hover:text-gray-800 transition-colors">
+            <button className="flex flex-col items-center text-[black] hover:text-gray-800 transition-colors">
               <FontAwesomeIcon icon={faDownload} className="text-lg mb-1" />
               <span className="text-xl font-light">Download with AD</span>
             </button>
-            <button className="flex flex-col items-center text-gray-600 hover:text-gray-800 transition-colors">
+            <button className="flex flex-col items-center text-[black] hover:text-gray-800 transition-colors">
               <FontAwesomeIcon icon={faPlus} className="text-lg mb-1" />
               <span className="text-xl font-light">Request new book</span>
             </button>

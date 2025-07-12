@@ -1,21 +1,23 @@
-// src/Private/Cards/Cards.jsx
 import React from 'react';
-import BookCard from '../../Components/BookCard'; // Import BookCard
+import BookCard from '../../Components/BookCard';
 import Footer from '../../Pages/Footer/Footer';
 
 const Cards = () => {
   const trendingBooks = [
-    { title: 'Hidden City', author: 'MS Lawson', image: '/Hidden.png' },
-    { title: 'We Are Voulhire', author: 'Matthew Tysz', image: '/voulhire.png' },
-    { title: 'The Unveiling', author: 'Tamara Leigh', image: '/unveiling.png' },
-    { title: 'A Convenient Risk', author: 'Sara R Turnquist', image: '/risk.png' },
-    { title: 'A Voyage to Arcturus', author: 'David Lindsay', image: 'vogage.png' },
-    { title: 'The Phoenix and the Carpet', author: 'Edith Nesbit', image: 'phoenix.png' },
-    { title: 'The Hating Game', author: 'Sally Thorne', image: '/hate.png' },
-    { title: 'Me Before You', author: 'Jojo Moyes', image: '/me.png' },
-    { title: 'Red, White & Royal Blue', author: 'Casey McQuiston', image: '/red.png' },
-    { title: 'It Ends With Us', author: 'Colleen Hoover', image: '/end.png' },
-    { title: 'The Name of the Wind', author: 'Patrick Rothfuss', image: '/wind.png' },
+    { id: 3, title: 'Harry Potter', author: 'J.K. Rowling', image: '/harry.png' },
+    { id: 4, title: 'The Hobbit', author: 'J.R.R. Tolkien', image: '/habbit.png' },
+    { id: 7, title: 'Hidden City', author: 'MS Lawson', image: '/Hidden.png' },
+    { id: 11, title: 'We Are Voulhire', author: 'Matthew Tysz', image: '/voulhire.png' },
+    { id: 5, title: 'The Unveiling', author: 'Tamara Leigh', image: '/unveiling.png' },
+    { id: 12, title: 'A Convenient Risk', author: 'Sara R Turnquist', image: '/risk.png' },
+    { id: 13, title: 'A Voyage to Arcturus', author: 'David Lindsay', image: '/vogage.png' },
+    { id: 14, title: 'The Phoenix and the Carpet', author: 'Edith Nesbit', image: '/phoenix.png' },
+    { id: 6, title: 'The Hating Game', author: 'Sally Thorne', image: '/hate.png' },
+    { id: 1, title: 'Me Before You', author: 'Jojo Moyes', image: '/me.png' },
+    { id: 10, title: 'Red, White & Royal Blue', author: 'Casey McQuiston', image: '/red.png' },
+    { id: 8, title: 'It Ends With Us', author: 'Colleen Hoover', image: '/end.png' },
+    { id: 9, title: 'The Name of the Wind', author: 'Patrick Rothfuss', image: '/wind.png' },
+    
   ];
 
   return (
@@ -36,8 +38,8 @@ const Cards = () => {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-5">
-        {trendingBooks.map((book, index) => (
-          <BookCard key={index} book={book} />
+        {trendingBooks.map((book) => (
+          <BookCard key={book.id} book={book} />
         ))}
       </div>
       <Footer />
