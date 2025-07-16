@@ -48,8 +48,6 @@ const AppRoutes = () => {
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/read/:bookId" element={<BookReader />} />
        
-        
-   
 
       </Route>
 
