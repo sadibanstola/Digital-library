@@ -11,7 +11,7 @@ const BookReader = () => {
   const [pageIndex, setPageIndex] = useState(0);
 
   const bookPages = {
-    3: HarryPages, // Ensure HarryPotterPages is an array of functions
+    3: HarryPages, 
     4: HobbitPages,
     10: RedWhitePages,
   };

@@ -76,40 +76,22 @@ const Navbar = () => {
         initial={{ y: '-100%' }}
         animate={{ y: '0%' }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          position: 'fixed',
-          top: '0',
-          width: '1444px',
-          height: '100px',
-          padding: '24px 99px 24px 100px',
-          background: '#F1F4FE',
-          zIndex: 1000,
-        }}
+        className="flex justify-between items-center fixed top-0 w-[1444px] h-[100px] px-[99px] py-[24px] bg-[#F1F4FE] z-[1000]"
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <div className="flex items-center gap-[10px]">
           <img
             src="/src/assets/image 163.png"
             alt="LibraDream Logo"
-            style={{ width: '52px', height: '52px' }}
+            className="w-[52px] h-[52px]"
           />
           <span
-            style={{
-              fontFamily: '"Gothic A1", sans-serif',
-              fontWeight: 400,
-              fontSize: '24px',
-              lineHeight: '100%',
-              letterSpacing: '6%',
-              color: '#121212',
-            }}
+            className="font-['Gothic_A1'] font-normal text-[24px] leading-none tracking-[0.06em] text-[#121212]"
           >
             LibraDream
           </span>
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
+        <div className="flex items-center gap-[40px]">
           <Link
             to="/"
             className="font-['Gothic_A1'] font-medium text-base leading-none text-[#121212] no-underline relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-[#5352ED] after:transition-all after:duration-300 hover:after:w-full"
@@ -135,41 +117,20 @@ const Navbar = () => {
             Discover
           </button>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <div className="flex items-center gap-[20px]">
           <input
             type="text"
             placeholder="Search"
-            style={{
-              width: '200px',
-              height: '40px',
-              borderRadius: '10px',
-              padding: '10px 12px',
-              border: '0.8px solid #CB602B',
-              outline: 'none',
-            }}
+            className="w-[200px] focus:w-[300px] h-[40px] rounded-[10px] px-[12px] py-[10px] border-[0.8px] border-[#CB602B] outline-none transition-all duration-300 ease-in-out"
           />
           {isLoggedIn ? (
             <div className="ml-10" onClick={toggleProfile}>
               <FontAwesomeIcon icon={faSignal} rotation={270} size="lg" />
             </div>
           ) : (
-            <Link to="/login">
+            <Link to="/login" className="ml-auto">
               <button
-                style={{
-                  width: '133px',
-                  height: '40px',
-                  borderRadius: '6px',
-                  padding: '12px',
-                  background: '#CB602B',
-                  border: 'none',
-                  color: '#FFFFFF',
-                  fontFamily: '"Gothic A1", sans-serif',
-                  fontWeight: 500,
-                  fontSize: '16px',
-                  lineHeight: '16px',
-                  letterSpacing: '0%',
-                  cursor: 'pointer',
-                }}
+                className="w-[133px] h-[40px] rounded-[6px] px-[12px] py-[12px] bg-[#CB602B] border-none text-[#FFFFFF] font-['Gothic_A1'] font-medium text-[16px] leading-[16px] tracking-normal cursor-pointer"
               >
                 Register/Login
               </button>
@@ -177,14 +138,15 @@ const Navbar = () => {
           )}
         </div>
 
+{/* Profile Section */}
         {isLoggedIn && isProfileOpen && (
           <div className="fixed right-0 top-0 h-screen w-[390px] bg-[#242329] text-white p-6 z-50" style={{ transform: isProfileOpen ? 'translateX(0)' : 'translateX(100%)', transition: 'transform 0.3s ease-in-out', fontFamily: '"Gothic A1", sans-serif' }}>
             <div className="flex justify-between items-center mb-6">
               <button className="text-3xl" onClick={toggleProfile}>×</button>
               <h2 className="text-3xl font-semibold flex-1 text-center">Settings</h2>
               <Link to="/notifications" onClick={toggleProfile}>
-              <FontAwesomeIcon icon={faBell} className="text-2xl cursor-pointer hover:text-gray-300" />
-            </Link>
+                <FontAwesomeIcon icon={faBell} className="text-2xl cursor-pointer hover:text-gray-300" />
+              </Link>
             </div>
             <div className="flex flex-col items-center justify-center mb-11 mt-8">
               <img src="/sadi.png" alt="Profile" className="w-20 h-20 rounded-full mb-4 border-2 border-[#5352ED]" />
@@ -197,7 +159,7 @@ const Navbar = () => {
             <ul className="space-y-12">
               <li><Link to="/account" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faUser} className="mr-4 text-xl" /> Account Details</Link></li>
               <li><Link to="/mylibrary" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faBook} className="mr-4 text-xl" /> My Library</Link></li>
-              <li><Link to="/discover-feed" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faMagnifyingGlass} className="mr-4 text-xl" /> Discover Feed</Link></li>
+              <li><Link to="/cards" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faMagnifyingGlass} className="mr-4 text-xl" /> Discover Feed</Link></li>
               <li><Link to="/about" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faCircleInfo} className="mr-4 text-xl" /> About Us</Link></li>
               <li><Link to="/privacy" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faShield} className="mr-4 text-xl" /> Privacy & Terms</Link></li>
               <li><Link to="/home" className="flex items-center text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faSignOutAlt} className="mr-4 text-xl" /> Logout</Link></li>
@@ -206,6 +168,7 @@ const Navbar = () => {
         )}
       </motion.nav>
 
+{/* Discover Section */}
       <AnimatePresence>
         {isDiscoverOpen && (
           <>
@@ -213,7 +176,7 @@ const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40"
+              className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-xs z-40"
               onClick={toggleDiscover}
             />
             
@@ -222,7 +185,7 @@ const Navbar = () => {
               animate={{ y: '80px' }}
               exit={{ y: '-100%' }}
               transition={{ type: 'spring', damping: 18 }}
-              className="fixed top-[100px] left-1/4 transform translate-x-1/4 bg-white z-50 shadow-lg"
+              className="fixed top-[100px] left-1/4 transform translate-x-1/3 bg-white z-50 shadow-lg"
               style={{ width: '900px', height: '300px' }}
             >
               <div className="h-full flex max-w-[1300px] mx-auto">
@@ -245,7 +208,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="w-3/4 p-5 relative" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
-                  <div className="absolute top-6 right-16">
+                  <div className="absolute top-6 right-6">
                     <button 
                       onClick={handleSeeMore}
                       className="text-[#CB602B] font-medium flex items-center"
@@ -264,7 +227,6 @@ const Navbar = () => {
                       booksData[activeTab].map((book, index) => (
                         <div key={index} className="p-3 hover:bg-gray-50 rounded-lg">
                           <p className="text-sm text-black">{book.name || book.author}</p>
-                          {}
                         </div>
                       ))
                     )}

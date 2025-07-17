@@ -5,7 +5,7 @@ import Footer from '../../Pages/Footer/Footer';
 const Privacy = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Existing navbar assumed to be here */}
+      
       <main
         className="flex-1 p-10 pt-40 ml-16"
         style={{

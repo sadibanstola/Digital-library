@@ -15,7 +15,6 @@ import BookDetails from './Private/BookDetails/BookDetails.jsx';
 import AuthorSearch from './Private/AuthorSearch/AuthorSearch.jsx';
 import Notifications from './Private/Notifications/Notifications.jsx';
 import BookReader from './Components/BookReader.jsx';
-import HobbitPages from './Private/ReadingContent/HobbitPages.jsx';
 
 
 
@@ -43,12 +42,11 @@ const AppRoutes = () => {
         <Route path="/account" element={<Account />} />
         <Route path="/cards" element={<Cards />} />
         <Route path="/author-search" element={<AuthorSearch />} />
-        <Route path="/genre/:genreName" element={<GenreBooks />} /> {/* New route */}
-        <Route path="/book/:bookId" element={<BookDetails  />} /> {/* New route */}
+        <Route path="/genre/:genreName" element={<GenreBooks />} />
+        <Route path="/book/:bookId" element={<BookDetails />} />
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/read/:bookId" element={<BookReader />} />
        
-
       </Route>
 
       {/* Fallback */}

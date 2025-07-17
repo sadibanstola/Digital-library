@@ -6,7 +6,7 @@ import AppRoutes from './Routes.jsx';
 
 function App() {
   const location = useLocation();
-  // Add '/read' to hideNavbarRoutes to cover all /read/:bookId routes
+  // hideNavbarRoutes 
   const hideNavbarRoutes = ['/login', '/signup', '/mood', '/account', '/read'];
   const showNavbar = !hideNavbarRoutes.some(route => 
     location.pathname === route || location.pathname.startsWith(route)

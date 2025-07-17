@@ -5,8 +5,8 @@ const About = () => {
     <div
       className="relative min-h-screen"
       style={{
-        backgroundColor: '#FFFFFF', // Consistent with previous design
-        paddingTop: '100px', // Accounts for fixed navbar height
+        backgroundColor: '#FFFFFF', 
+        paddingTop: '100px', 
       }}
     >
       {/* Top Banner Image */}
@@ -530,7 +530,7 @@ const About = () => {
         Home
       </a>
       <a
-        href="#"
+        href="/home"
         style={{
           fontWeight: 400,
           fontSize: '16px',
@@ -541,7 +541,7 @@ const About = () => {
         About Us
       </a>
       <a
-        href="#"
+        href="/about"
         style={{
           fontWeight: 400,
           fontSize: '16px',
@@ -580,7 +580,7 @@ const About = () => {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '20px',
+        gap: '25px',
       }}
     >
       <h4
@@ -603,7 +603,7 @@ const About = () => {
       >
         <a href="#">
           <img
-            src="/facboo1.png" 
+            src="/Facebook.png"
             alt="Facebook"
             style={{
               width: '35px',
@@ -646,19 +646,9 @@ const About = () => {
   </div>
 
   {/* Copyright */}
-  <div
-    style={{
-      borderside: '1px solid #FFFFFF',
-      paddingTop: '20px',
-      textAlign: 'center',
-      fontWeight: 400,
-      fontSize: '14px',
-      color: '#B0B0B0',
-      fontFamily: 'Gothic A1',
-    }}
-  >
-    © LibraDream Inc. ALL RIGHTS RESERVED.
-  </div>
+  <div className="border-b-2 border-[#5D38DE] pt-6 text-center font-normal text-sm text-[#B0B0B0] font-['Gothic_A1']">
+        © LibraDream Inc. ALL RIGHTS RESERVED.
+      </div>
 </div>
     </div>
     

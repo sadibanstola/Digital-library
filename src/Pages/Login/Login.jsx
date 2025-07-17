@@ -14,8 +14,9 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
     // Dummy login: no validation, just log in
-    await login({ username: credentials.username || 'guest' }); // Default to 'guest' if empty
+    await login({ username: credentials.username || 'guest' }); 
     navigate('/mood', { replace: true });
   };
 

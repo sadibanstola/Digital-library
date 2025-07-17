@@ -84,7 +84,7 @@ const Explore = () => {
 
   return (
     <div className="bg-[white] px-21 py-16">
-      {/* Existing Genre Section */}
+      {/* Genre Section */}
       <section className="px-5 py-7 text-center bg-[#F4F6FD]">
         <h2 className="text-4xl font-normal text-[#121212] mb-10" style={{ fontFamily: "Marion" }}>
           Explore by Genre
@@ -139,7 +139,7 @@ const Explore = () => {
             </div>
           </div>
 
-          {/* Navigation arrows - positioned outside the container */}
+          {/* Navigation arrows */}
           <button
             onClick={prevTestimonial}
             className="absolute left-24 top-[200px] transform -translate-y-1/2 w-15 h-15 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors"

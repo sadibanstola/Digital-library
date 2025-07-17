@@ -61,7 +61,7 @@ const Account = () => {
           <div className='text-3xl text-center mb-2 p-1 font-medium'style={{
           fontFamily: '"Marion", serif',}}>ACCOUNT</div>
 
-          {/* Profile Image with Always-Visible Camera Icon */}
+          {/* Profile Image */}
 <div className="relative mb-4">
   <img 
     src={profileImage} 
