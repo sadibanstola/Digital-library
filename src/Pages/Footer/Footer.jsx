@@ -59,7 +59,7 @@ const Footer = () => {
           <div className="flex flex-col gap-[10px]">
             <a href="#">
               <img
-                src="/facboo1.png"
+                src="/Facebook.png"
                 alt="Facebook"
                 className="w-[35px] h-[35px]"
               />
@@ -91,7 +91,7 @@ const Footer = () => {
 
       
     {/* Copyright */}
-      <div className="border-b-2 border-[#5D38DE] pt-5 text-center font-normal text-sm text-[#B0B0B0] font-['Gothic_A1']">
+      <div className="border-b-2 border-[#5D38DE] pt-6 text-center font-normal text-sm text-[#B0B0B0] font-['Gothic_A1']">
         © LibraDream Inc. ALL RIGHTS RESERVED.
       </div>
     </div>

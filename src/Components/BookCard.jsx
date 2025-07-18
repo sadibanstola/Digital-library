@@ -1,20 +1,20 @@
 // src/components/BookCard.jsx
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom'; // Add useNavigate
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { FavoritesContext } from '../context/FavoritesContext';
 
 const BookCard = ({ book, showLoginPopup = false }) => {
   const { favorites, addFavorite } = useContext(FavoritesContext);
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); 
 
-  // Define clickable book IDs
+  //clickable book IDs
   const clickableBookIds = [3, 4, 10]; // IDs for Harry Potter, The Hobbit, Red, White & Royal Blue
 
   const handleFavoriteClick = (event) => {
     event.preventDefault();
-    event.stopPropagation(); // Prevent triggering card click
+    event.stopPropagation(); 
     if (showLoginPopup) {
       const popup = document.createElement('div');
       popup.textContent = 'Please login to add to library.';

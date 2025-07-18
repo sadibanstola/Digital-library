@@ -2,7 +2,7 @@ const RedWhitePages = [
   // Page 1
   (goToPreviousPage, goToNextPage, setPageIndex, exit) => (
     <div className="w-screen h-screen bg-gray-100 relative overflow-auto">
-      {/* Header section with pink background */}
+      {/* Header section */}
       <div className="w-full bg-[#CC8899] py-8 relative" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
         {/* Navigation arrows */}
         <button
@@ -37,7 +37,7 @@ const RedWhitePages = [
           unifying, witnessed globally.
         </p>
 
-        {/* Central image */}
+        {/*image */}
         <div className="flex justify-center mb-8">
           <img
             src="/red1.png"

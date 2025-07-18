@@ -53,7 +53,7 @@ const Home = () => {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="flex items-center mt-2.5"
             >
-              <span className="w-3 h-3 bg-green-700 rounded-full mr-2"></span>
+              <span className="w-4 h-4 bg-green-700 rounded-full mr-2"></span>
               <span
                 className="text-sm text-black"
                 style={{ fontFamily: '"Gothic A1", sans-serif' }}
@@ -142,7 +142,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white p-4 rounded-lg flex items-center gap-4 border border-[#CB602B]">
+
+          <div className="bg-white p-2 rounded-lg flex items-center gap-2 border border-[#CB602B]">
             <p
               className="text-base text-[#CB602B]"
               style={{ fontFamily: '"Gothic A1", sans-serif' }}

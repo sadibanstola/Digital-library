@@ -1,5 +1,5 @@
 const HarryPages = [
-  // Page 1: Full-screen dramatic scene with Exit and Continue buttons
+  // Page 1
   (goToPreviousPage, goToNextPage, setPageIndex, exit) => (
     <div className="w-screen h-screen relative overflow-hidden" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
       {/* Background image */}
@@ -9,7 +9,7 @@ const HarryPages = [
         className="w-full h-full object-cover"
       />
 
-      {/* Buttons overlay */}
+      {/* Buttons  */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-20">
         <button
           onClick={exit}
@@ -53,7 +53,7 @@ const HarryPages = [
         </div>
       </div>
 
-      {/* Image centered on screen */}
+      {/* Image */}
       <div className="flex justify-center items-center h-[70vh] ">
         <img
           src="/harry2.png"
