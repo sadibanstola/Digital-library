@@ -30,10 +30,10 @@ const Login = () => {
       }}
     >
       <div
-        className="absolute w-[525px] h-[710px] rounded-[12px] p-6 bg-[#FFFFFF] shadow-md"
+        className="absolute w-[500px] h-[710px] rounded-[12px] p-6 bg-[#FFFFFF] shadow-md"
         style={{ top: '70px', left: '815px' }}
       >
-        <div className="mb-6 text-center">
+        <div className="mb-5 text-center">
           <h1
             style={{
               fontFamily: 'Marion',
@@ -42,7 +42,8 @@ const Login = () => {
               lineHeight: '28px',
               letterSpacing: '0',
               color: '#121212',
-              top: '20px',
+              top: '50px',
+              marginBottom:'20px',
             }}
           >
             Digital Library of Dreams
@@ -50,37 +51,43 @@ const Login = () => {
           <p
             style={{
               fontFamily: 'Gothic A1',
-              fontWeight: 400,
+              fontWeight: 300,
               fontSize: '20px',
               lineHeight: '100%',
               letterSpacing: '0',
-              top: '30px',
-              width: '361px',
-              left: '30px',
+              top: '80px',
+              
+             
+             
             }}
           >
-            Discover stories that match your imagination.
+            Discover stories that match your <br /> <br /> imagination.
           </p>
         </div>
 
         <div
-          className="bg-[#F1F4FE] w-[477px] h-[500px] rounded-[16px] p-[24px] text-center"
+          className="bg-[#F1F4FE] w-[450px] h-[500px] rounded-[16px] p-[24px] text-center"
           style={{ top: '150px', left: '24px', gap: '15px', position: 'absolute' }}
         >
           <h2
-            style={{
-              fontFamily: 'Marion',
-              fontWeight: 700,
-              fontSize: '20px',
-              lineHeight: '30px',
-              letterSpacing: '0',
-              textAlign: 'center',
-              color: '#121212',
-            }}
-          >
-            LOGIN
-          </h2>
+  style={{
+    fontFamily: 'Marion',
+    fontWeight: 700,
+    fontSize: '20px',
+    lineHeight: '30px',
+    letterSpacing: '0',
+    textAlign: 'center',
+    color: '#121212',
+  }}
+>
+  LOGIN<br />
+  <span className="text-[14px] text-[#949CA9] font-normal">
+    Let’s build something great
+  </span>
+</h2>
+
           <form className="mt-4" onSubmit={handleLogin}>
+
             <div className="mb-4">
               <label
                 className="block mb-1 text-left"

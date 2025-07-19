@@ -11,14 +11,14 @@ const AuthorSearch = () => {
 
   // Sample book data 
   const books = [
-   
+    
+  { id: 3, title: 'Harry Potter', author: 'J.K. Rowling', image: '/harry.png' },
   { id: 1, title: 'Me Before You', author: 'Jojo Moyes', image: '/me.png' },
   { id: 4, title: 'The Hobbit', author: 'J.R.R. Tolkien', image: '/habbit.png' }, 
+  { id: 10, title: 'Red, White & Royal Blue', author: 'Casey McQuiston', image: '/red.png' }, 
   { id: 5, title: 'The Unveiling', author: 'Tamara Leigh', image: '/unveiling.png' }, 
-  { id: 3, title: 'Harry Potter', author: 'J.K. Rowling', image: '/harry.png' }, 
   { id: 6, title: 'The Hating Game', author: 'Sally Thorne', image: '/hate.png' },
   { id: 7, title: 'Hidden City', author: 'MS Lawson', image: '/Hidden.png' }, 
-  { id: 10, title: 'Red, White & Royal Blue', author: 'Casey McQuiston', image: '/red.png' }, 
   { id: 8, title: 'It Ends With Us', author: 'Colleen Hoover', image: '/end.png' },
   { id: 9, title: 'The Name of the Wind', author: 'Patrick Rothfuss', image: '/wind.png' },
   { id: 2, title: 'We Are Voulhire', author: 'Matthew Tysz', image: '/voulhire.png' }, 
