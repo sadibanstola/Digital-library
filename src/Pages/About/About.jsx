@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const About = () => {
   return (
     <div
@@ -518,61 +518,21 @@ const About = () => {
       >
         QUICK LINKS
       </h4>
-      <a
-        href="#"
-        style={{
-          fontWeight: 400,
-          fontSize: '16px',
-          color: '#B0B0B0',
-          textDecoration: 'none',
-        }}
-      >
+      <Link to="/home" className="font-normal text-base text-[#B0B0B0] no-underline">
         Home
-      </a>
-      <a
-        href="/home"
-        style={{
-          fontWeight: 400,
-          fontSize: '16px',
-          color: '#B0B0B0',
-          textDecoration: 'none',
-        }}
-      >
+      </Link>
+      <Link to="/about" className="font-normal text-base text-[#B0B0B0] no-underline">
         About Us
-      </a>
-      <a
-        href="/about"
-        style={{
-          fontWeight: 400,
-          fontSize: '16px',
-          color: '#B0B0B0',
-          textDecoration: 'none',
-        }}
-      >
+      </Link>
+      <Link to="/cards" className="font-normal text-base text-[#B0B0B0] no-underline">
         Discovery
-      </a>
-      <a
-        href="#"
-        style={{
-          fontWeight: 400,
-          fontSize: '16px',
-          color: '#B0B0B0',
-          textDecoration: 'none',
-        }}
-      >
+      </Link>
+      <Link to="/mylibrary" className="font-normal text-base text-[#B0B0B0] no-underline">
         MyLibrary
-      </a>
-      <a
-        href="#"
-        style={{
-          fontWeight: 400,
-          fontSize: '16px',
-          color: '#B0B0B0',
-          textDecoration: 'none',
-        }}
-      >
+      </Link>
+      <Link to="/privacy" className="font-normal text-base text-[#B0B0B0] no-underline">
         Help
-      </a>
+      </Link>
     </div>
 
     {/* Social Media */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -34,21 +35,22 @@ const Footer = () => {
           <h4 className="font-medium text-2xl text-white mb-[10px]">
             QUICK LINKS
           </h4>
-          <a href="#" className="font-normal text-base text-[#B0B0B0] no-underline">
-            Home
-          </a>
-          <a href="#" className="font-normal text-base text-[#B0B0B0] no-underline">
-            About Us
-          </a>
-          <a href="#" className="font-normal text-base text-[#B0B0B0] no-underline">
-            Discovery
-          </a>
-          <a href="#" className="font-normal text-base text-[#B0B0B0] no-underline">
-            MyLibrary
-          </a>
-          <a href="#" className="font-normal text-base text-[#B0B0B0] no-underline">
-            Help
-          </a>
+         <Link to="/home" className="font-normal text-base text-[#B0B0B0] no-underline">
+  Home
+</Link>
+<Link to="/about" className="font-normal text-base text-[#B0B0B0] no-underline">
+  About Us
+</Link>
+<Link to="/cards" className="font-normal text-base text-[#B0B0B0] no-underline">
+  Discovery
+</Link>
+<Link to="/mylibrary" className="font-normal text-base text-[#B0B0B0] no-underline">
+  MyLibrary
+</Link>
+<Link to="/privacy" className="font-normal text-base text-[#B0B0B0] no-underline">
+  Help
+</Link>
+
         </div>
 
         {/* Social Media */}

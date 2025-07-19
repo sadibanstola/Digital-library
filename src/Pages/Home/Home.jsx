@@ -12,7 +12,7 @@ const Home = () => {
   const { isLoggedIn, user, logout } = useAuth();
 
   return (
-    <div className="bg-white flex flex-col" style={{ fontFamily: '"Marion", serif' }}>
+    <div className="bg-white flex flex-col">
       {/* Hero Section */}
       <section className="py-[140px] px-24 bg-gray-50 flex flex-col items-center gap-12">
         <div className="flex justify-between w-full">

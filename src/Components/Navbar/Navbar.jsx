@@ -93,7 +93,7 @@ const Navbar = () => {
         
         <div className="flex items-center gap-[40px]">
           <Link
-            to="/"
+            to="/home"
             className="font-['Gothic_A1'] font-medium text-base leading-none text-[#121212] no-underline relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bottom-[-2px] after:left-0 after:bg-[#5352ED] after:transition-all after:duration-300 hover:after:w-full"
           >
             Home
