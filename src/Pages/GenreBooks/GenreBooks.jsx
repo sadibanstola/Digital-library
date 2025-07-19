@@ -1,6 +1,8 @@
 
 // src/Pages/GenreBooks/GenreBooks.jsx
 import React from 'react';
+import { useEffect } from 'react';
+
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import BookCard from '../../Components/BookCard';
@@ -10,6 +12,11 @@ const GenreBooks = () => {
   const { genreName } = useParams();
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
+  useEffect(() => {
+  
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}, []);
+
 
   const books = [
     { id: 1, title: 'Hidden City', author: 'MS Lawson', image: '/Hidden.png', genre: 'Fantasy' },
@@ -34,7 +41,7 @@ const GenreBooks = () => {
         <nav className="text-lg pl-8" style={{ fontFamily: '"Gothic A1", sans-serif', fontWeight: 400 }}>
           <span
             className="text-black cursor-pointer text-3xl hover:underline"
-            onClick={() => navigate('/Explore.jsx')}
+            onClick={() => navigate('/explore')}
           >
             Genre
           </span>
@@ -56,7 +63,9 @@ const GenreBooks = () => {
         >
           No books available in this genre.
         </p>
+        
       )}
+      
       <Footer />
     </div>
   );

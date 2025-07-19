@@ -18,6 +18,7 @@ import BookReader from './Components/BookReader.jsx';
 
 
 
+
 const ProtectedRoute = () => {
   const { isLoggedIn } = useAuth();
   return isLoggedIn ? <Outlet /> : <Navigate to="/login" replace />;
@@ -28,11 +29,14 @@ const AppRoutes = () => {
     <Routes>
       {/* Public routes */}
       <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Navigate to="/home" />} />
+
       <Route path="/about" element={<About />} />
       
      
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
+     
 
       {/* Protected routes */}
       <Route element={<ProtectedRoute />}>
@@ -46,6 +50,7 @@ const AppRoutes = () => {
         <Route path="/book/:bookId" element={<BookDetails />} />
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/read/:bookId" element={<BookReader />} />
+
        
       </Route>
 

@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import { FavoritesProvider } from './context/FavoritesContext';
 import Navbar from './Components/Navbar/Navbar.jsx';
 import AppRoutes from './Routes.jsx';
+import ScrollToTop from './ScrollToTop.jsx';
 
 function App() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function App() {
     <AuthProvider>
       <FavoritesProvider>
         <div className="App">
+          <ScrollToTop /> 
           {showNavbar && <Navbar />}
           <AppRoutes />
         </div>
