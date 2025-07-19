@@ -80,7 +80,7 @@ const Navbar = () => {
       >
         <div className="flex items-center gap-[10px]">
           <img
-            src="/src/assets/image 163.png"
+            src="/image 163.png"
             alt="LibraDream Logo"
             className="w-[52px] h-[52px]"
           />

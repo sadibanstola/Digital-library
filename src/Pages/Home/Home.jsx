@@ -36,17 +36,42 @@ const Home = () => {
             >
               Discover books, stories, and ideas that match your imagination.
             </motion.p>
-            <Link to="/discover">
-              <motion.button
-                initial={{ x: '-100%' }}
-                animate={{ x: '0%' }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="px-6 py-3 bg-[#CB602B] text-white text-base leading-4 rounded-lg w-55 h-14"
-                style={{ fontFamily: '"Gothic A1", sans-serif' }}
-              >
-                Explore Now
-              </motion.button>
-            </Link>
+
+            
+  <motion.button
+  initial={{ x: '-100%' }}
+  animate={{ x: '0%' }}
+  transition={{ duration: 0.8, ease: 'easeOut' }}
+  className="px-6 py-3 bg-[#CB602B] text-white text-base leading-4 rounded-lg w-55 h-14"
+  style={{ fontFamily: '"Gothic A1", sans-serif' }}
+  onClick={() => {
+    const discoverSection = document.getElementById('discover');
+    if (discoverSection) {
+      // Smooth scroll polyfill
+      const start = window.scrollY;
+      const target = discoverSection.getBoundingClientRect().top + window.scrollY;
+      const duration = 800; // Duration in ms
+      const startTime = performance.now();
+
+      const easeOutQuad = (t) => t * (2 - t); // Easing function for smooth effect
+
+      const scroll = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeOutQuad(progress);
+        window.scrollTo(0, start + (target - start) * easedProgress);
+
+        if (progress < 1) {
+          requestAnimationFrame(scroll);
+        }
+      };
+
+      requestAnimationFrame(scroll);
+    }
+  }}
+>
+  Explore Now
+</motion.button>
             <motion.div
               initial={{ x: '-100%' }}
               animate={{ x: '0%' }}
@@ -160,7 +185,7 @@ const Home = () => {
         </div>
       </section>
       <WhyChooseUs />
-      <Discover />
+      <Discover id="discover" />
       <Explore />
       <Launch />
       <Footer />

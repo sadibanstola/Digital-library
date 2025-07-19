@@ -1,10 +1,9 @@
-// src/Pages/Discover/Discover.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import BookCard from '../../Components/BookCard'; // Corrected path
+import BookCard from '../../Components/BookCard';
 
-const Discover = () => {
+const Discover = ({ id }) => {
   const [activeTab, setActiveTab] = useState('Trending');
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
@@ -53,7 +52,7 @@ const Discover = () => {
   );
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div id={id} className="p-6 bg-gray-100 min-h-screen">
       <h1
         className="text-2xl font-bold mb-4 pl-10"
         style={{ fontFamily: '"Marion", serif', fontWeight: 400, fontSize: '36px' }}

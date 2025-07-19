@@ -5,3 +5,6 @@
   src: url('./assets/fonts/SK-Modernist-Regular.ttf') format('truetype');
   font-style: medium;
 }
+html {
+  scroll-behavior: smooth;
+}

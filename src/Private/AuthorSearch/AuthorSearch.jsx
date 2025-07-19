@@ -11,19 +11,18 @@ const AuthorSearch = () => {
 
   // Sample book data 
   const books = [
-    
-  { id: 3, title: 'Harry Potter', author: 'J.K. Rowling', image: '/harry.png' },
-  { id: 1, title: 'Me Before You', author: 'Jojo Moyes', image: '/me.png' },
-  { id: 4, title: 'The Hobbit', author: 'J.R.R. Tolkien', image: '/habbit.png' }, 
-  { id: 10, title: 'Red, White & Royal Blue', author: 'Casey McQuiston', image: '/red.png' }, 
-  { id: 5, title: 'The Unveiling', author: 'Tamara Leigh', image: '/unveiling.png' }, 
-  { id: 6, title: 'The Hating Game', author: 'Sally Thorne', image: '/hate.png' },
-  { id: 7, title: 'Hidden City', author: 'MS Lawson', image: '/Hidden.png' }, 
-  { id: 8, title: 'It Ends With Us', author: 'Colleen Hoover', image: '/end.png' },
-  { id: 9, title: 'The Name of the Wind', author: 'Patrick Rothfuss', image: '/wind.png' },
-  { id: 2, title: 'We Are Voulhire', author: 'Matthew Tysz', image: '/voulhire.png' }, 
-  { id: 11, title: 'A Convenient Risk', author: 'Sara R Turnquist', image: '/risk.png' }, 
-  { id: 12, title: 'A Voyage to Arcturus', author: 'David Lindsay', image: '/vogage.png' },
+    { id: 3, title: 'Harry Potter', author: 'J.K. Rowling', image: '/harry.png' },
+    { id: 1, title: 'Me Before You', author: 'Jojo Moyes', image: '/me.png' },
+    { id: 4, title: 'The Hobbit', author: 'J.R.R. Tolkien', image: '/habbit.png' }, 
+    { id: 10, title: 'Red, White & Royal Blue', author: 'Casey McQuiston', image: '/red.png' }, 
+    { id: 5, title: 'The Unveiling', author: 'Tamara Leigh', image: '/unveiling.png' }, 
+    { id: 6, title: 'The Hating Game', author: 'Sally Thorne', image: '/hate.png' },
+    { id: 7, title: 'Hidden City', author: 'MS Lawson', image: '/Hidden.png' }, 
+    { id: 8, title: 'It Ends With Us', author: 'Colleen Hoover', image: '/end.png' },
+    { id: 9, title: 'The Name of the Wind', author: 'Patrick Rothfuss', image: '/wind.png' },
+    { id: 2, title: 'We Are Voulhire', author: 'Matthew Tysz', image: '/voulhire.png' }, 
+    { id: 11, title: 'A Convenient Risk', author: 'Sara R Turnquist', image: '/risk.png' }, 
+    { id: 12, title: 'A Voyage to Arcturus', author: 'David Lindsay', image: '/vogage.png' },
   ];
 
   // Filter books based on search term
@@ -32,8 +31,8 @@ const AuthorSearch = () => {
   );
 
   return (
-    <div className="pt-[130px] bg-white min-h-screen" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
-      <div className="max-w-7xl mx-auto px-4">
+    <div className="flex flex-col min-h-screen bg-white pt-[130px]" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
+      <div className="flex-1 max-w-7xl mx-auto px-4">
         {/* Search Bar */}
         <div className="flex justify-center mb-8">
           <div className="relative w-full max-w-xl">
@@ -42,7 +41,7 @@ const AuthorSearch = () => {
               placeholder="Search by author"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full h-12 pl-12 pr progres pr-3 rounded-[10px] border border-[#CB602B] focus:outline-none"
+              className="w-full h-12 pl-12 pr-3 rounded-[10px] border border-[#CB602B] focus:outline-none"
               style={{
                 fontFamily: '"Gothic A1", sans-serif',
                 fontSize: '16px',
