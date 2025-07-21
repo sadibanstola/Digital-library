@@ -1,20 +1,21 @@
-// src/components/BookCard.jsx
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { FavoritesContext } from '../context/FavoritesContext';
+import { useNavigation } from '../App'; // Import useNavigation
 
 const BookCard = ({ book, showLoginPopup = false }) => {
   const { favorites, addFavorite } = useContext(FavoritesContext);
-  const navigate = useNavigate(); 
+  const { setOrigin } = useNavigation(); // Use navigation context
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  //clickable book IDs
   const clickableBookIds = [3, 4, 10]; // IDs for Harry Potter, The Hobbit, Red, White & Royal Blue
 
   const handleFavoriteClick = (event) => {
     event.preventDefault();
-    event.stopPropagation(); 
+    event.stopPropagation();
     if (showLoginPopup) {
       const popup = document.createElement('div');
       popup.textContent = 'Please login to add to library.';
@@ -64,16 +65,16 @@ const BookCard = ({ book, showLoginPopup = false }) => {
     (fav) => fav.title === book.title && fav.author === book.author
   );
 
-  // Handle card click for navigation
   const handleCardClick = () => {
     if (clickableBookIds.includes(book.id)) {
+      setOrigin(location.pathname); // Set origin before navigating
       navigate(`/book/${book.id}`);
     }
   };
 
   return (
     <div
-      className={`bg-white p-3 shadow border border-[#5352ED] max-w-[370px] mx-auto relative ${
+      className={`bg-white p-3 shadow border border-[#5352ED] max-w-[370px] mx-auto relative sm:p-2 sm:max-w-[300px] md:p-2 md:max-w-[340px] ${
         clickableBookIds.includes(book.id) ? 'cursor-pointer hover:shadow-lg' : ''
       }`}
       onClick={handleCardClick}
@@ -95,7 +96,7 @@ const BookCard = ({ book, showLoginPopup = false }) => {
       >
         <span style={{ color: '#CB602B', marginRight: '0.5rem' }}>By </span> {book.author}
       </p>
-      <div className="absolute top-[420px] right-8">
+      <div className="absolute bottom-4 right-8 sm:right-4 md:right-6">
         <FontAwesomeIcon
           icon={faBookmark}
           style={{

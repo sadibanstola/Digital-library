@@ -32,7 +32,7 @@ const AuthorSearch = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white pt-[130px]" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
-      <div className="flex-1 max-w-7xl mx-auto px-4">
+      <div className="flex-1 max-w-7xl mx-auto px-">
         {/* Search Bar */}
         <div className="flex justify-center mb-8">
           <div className="relative w-full max-w-xl">
