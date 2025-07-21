@@ -141,33 +141,91 @@ const Navbar = () => {
 
       {/* Profile Section */}
       {isLoggedIn && isProfileOpen && (
-        <div className="fixed right-0 top-0 h-screen w-[80%] lg:w-[390px] bg-[#242329] text-white p-6 z-50" style={{ transform: isProfileOpen ? 'translateX(0)' : 'translateX(100%)', transition: 'transform 0.3s ease-in-out', fontFamily: '"Gothic A1", sans-serif' }}>
-          <div className="flex justify-between items-center mb-6">
-            <button className="text-3xl" onClick={toggleProfile}>×</button>
-            <h2 className="text-2xl lg:text-3xl font-semibold flex-1 text-center">Settings</h2>
-            <Link to="/notifications" onClick={toggleProfile}>
-              <FontAwesomeIcon icon={faBell} className="text-xl lg:text-2xl cursor-pointer hover:text-gray-300" />
-            </Link>
-          </div>
-          <div className="flex flex-col items-center justify-center mb-11 mt-8">
-            <img src="/sadi.png" alt="Profile" className="w-16 lg:w-20 h-16 lg:h-20 rounded-full mb-4 border-2 border-[#5352ED]" />
-            <div className="text-center">
-              <h2 className="text-xl lg:text-2xl">Welcome Back,</h2>
-              <p className="text-lg lg:text-xl">Sadi Banstola</p>
-              <p className="text-base lg:text-lg text-gray-400">@sadi</p>
-            </div>
-          </div>
-          <ul className="space-y-8 lg:space-y-12">
-            <li><Link to="/account" className="flex items-center text-lg lg:text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faUser} className="mr-4 text-lg lg:text-xl" /> Account Details</Link></li>
-            <li><Link to="/mylibrary" className="flex items-center text-lg lg:text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faBook} className="mr-4 text-lg lg:text-xl" /> My Library</Link></li>
-            <li><Link to="/cards" className="flex items-center text-lg lg:text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faMagnifyingGlass} className="mr-4 text-lg lg:text-xl" /> Discover Feed</Link></li>
-            <li><Link to="/about" className="flex items-center text-lg lg:text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faCircleInfo} className="mr-4 text-lg lg:text-xl" /> About Us</Link></li>
-            <li><Link to="/privacy" className="flex items-center text-lg lg:text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faShield} className="mr-4 text-lg lg:text-xl" /> Privacy & Terms</Link></li>
-            <li><Link to="/home" className="flex items-center text-lg lg:text-xl hover:text-gray-300" onClick={toggleProfile}><FontAwesomeIcon icon={faSignOutAlt} className="mr-4 text-lg lg:text-xl" /> Logout</Link></li>
-          </ul>
-        </div>
-      )}
-
+  <motion.div
+    initial={{ x: '100%' }}
+    animate={{ x: 0 }}
+    exit={{ x: '100%' }}
+    transition={{ duration: 0.3, ease: 'easeInOut' }}
+    className="fixed right-0 top-0 h-screen w-[390px] bg-[#242329] text-white p-6 z-[1001] flex flex-col"
+    style={{ fontFamily: '"Gothic A1", sans-serif' }}
+  >
+    <div className="flex justify-between items-center mb-6">
+      <button className="text-3xl" onClick={toggleProfile}>×</button>
+      <h2 className="text-3xl font-semibold flex-1 text-center">Settings</h2>
+      <Link to="/notifications" onClick={toggleProfile}>
+        <FontAwesomeIcon icon={faBell} className="text-2xl cursor-pointer hover:text-gray-300" />
+      </Link>
+    </div>
+    <div className="flex flex-col items-center justify-center mb-11 mt-8">
+      <img
+        src="/sadi.png"
+        alt="Profile"
+        className="w-16 lg:w-20 h-16 lg:h-20 rounded-full mb-4 border-2 border-[#5352ED]"
+      />
+      <div className="text-center">
+        <h2 className="text-xl lg:text-2xl">Welcome Back,</h2>
+        <p className="text-lg lg:text-xl">Sadi Banstola</p>
+        <p className="text-base lg:text-lg text-gray-400">@sadi</p>
+      </div>
+    </div>
+    <ul className="space-y-8 lg:space-y-12">
+      <li>
+        <Link
+          to="/account"
+          className="flex items-center text-lg lg:text-xl hover:text-gray-300"
+          onClick={toggleProfile}
+        >
+          <FontAwesomeIcon icon={faUser} className="mr-4 text-lg lg:text-xl" /> Account Details
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/mylibrary"
+          className="flex items-center text-lg lg:text-xl hover:text-gray-300"
+          onClick={toggleProfile}
+        >
+          <FontAwesomeIcon icon={faBook} className="mr-4 text-lg lg:text-xl" /> My Library
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/cards"
+          className="flex items-center text-lg lg:text-xl hover:text-gray-300"
+          onClick={toggleProfile}
+        >
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="mr-4 text-lg lg:text-xl" /> Discover Feed
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/about"
+          className="flex items-center text-lg lg:text-xl hover:text-gray-300"
+          onClick={toggleProfile}
+        >
+          <FontAwesomeIcon icon={faCircleInfo} className="mr-4 text-lg lg:text-xl" /> About Us
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/privacy"
+          className="flex items-center text-lg lg:text-xl hover:text-gray-300"
+          onClick={toggleProfile}
+        >
+          <FontAwesomeIcon icon={faShield} className="mr-4 text-lg lg:text-xl" /> Privacy & Terms
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/home"
+          className="flex items-center text-lg lg:text-xl hover:text-gray-300"
+          onClick={toggleProfile}
+        >
+          <FontAwesomeIcon icon={faSignOutAlt} className="mr-4 text-lg lg:text-xl" /> Logout
+        </Link>
+      </li>
+    </ul>
+  </motion.div>
+)}
       {/* Discover Section */}
       <AnimatePresence>
         {isDiscoverOpen && (

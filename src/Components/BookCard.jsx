@@ -1,20 +1,19 @@
-// src/components/BookCard.jsx
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { FavoritesContext } from '../context/FavoritesContext';
+import { useNavigation } from '../App';
 
-const BookCard = ({ book, showLoginPopup = false }) => {
+const BookCard = ({ book, showLoginPopup = false, isInLibrary = false, isReadable = false, progress, timeLeft }) => {
   const { favorites, addFavorite } = useContext(FavoritesContext);
-  const navigate = useNavigate(); 
-
-  //clickable book IDs
-  const clickableBookIds = [3, 4, 10]; // IDs for Harry Potter, The Hobbit, Red, White & Royal Blue
+  const { setOrigin } = useNavigation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleFavoriteClick = (event) => {
     event.preventDefault();
-    event.stopPropagation(); 
+    event.stopPropagation();
     if (showLoginPopup) {
       const popup = document.createElement('div');
       popup.textContent = 'Please login to add to library.';
@@ -64,17 +63,17 @@ const BookCard = ({ book, showLoginPopup = false }) => {
     (fav) => fav.title === book.title && fav.author === book.author
   );
 
-  // Handle card click for navigation
   const handleCardClick = () => {
-    if (clickableBookIds.includes(book.id)) {
+    if (book.id && [3, 4, 10].includes(book.id)) {
+      setOrigin(location.pathname);
       navigate(`/book/${book.id}`);
     }
   };
 
   return (
     <div
-      className={`bg-white p-3 shadow border border-[#5352ED] max-w-[370px] mx-auto relative ${
-        clickableBookIds.includes(book.id) ? 'cursor-pointer hover:shadow-lg' : ''
+      className={`bg-${isInLibrary && isReadable ? 'gray-50' : 'white'} p-3 shadow border border-[#5352ED] max-w-[370px] mx-auto relative sm:p-2 sm:max-w-[300px] md:p-2 md:max-w-[340px] ${
+        book.id && [3, 4, 10].includes(book.id) ? 'cursor-pointer hover:shadow-lg' : ''
       }`}
       onClick={handleCardClick}
     >
@@ -95,7 +94,21 @@ const BookCard = ({ book, showLoginPopup = false }) => {
       >
         <span style={{ color: '#CB602B', marginRight: '0.5rem' }}>By </span> {book.author}
       </p>
-      <div className="absolute top-[420px] right-8">
+      {isInLibrary && isReadable && (
+        <div className="mt-2">
+          <div className="w-[290px] bg-gray-200 rounded-full h-2.5 mb-1">
+            <div
+              className="bg-orange-500 h-2.5 rounded-full"
+              style={{ width: progress || '0%' }}
+            ></div>
+          </div>
+          <div className="flex justify-between text-sm text-gray-500">
+            <span >{progress || '0%'} complete</span>
+            <span className='pr-7'>{timeLeft || '0 min left'}</span>
+          </div>
+        </div>
+      )}
+      <div className="absolute bottom-5 right-4 sm:right-2 md:right-4">
         <FontAwesomeIcon
           icon={faBookmark}
           style={{

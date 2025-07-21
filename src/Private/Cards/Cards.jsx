@@ -12,7 +12,7 @@ const Cards = () => {
     { id: 5, title: 'The Unveiling', author: 'Tamara Leigh', image: '/unveiling.png' },
     { id: 12, title: 'A Convenient Risk', author: 'Sara R Turnquist', image: '/risk.png' },
     { id: 13, title: 'A Voyage to Arcturus', author: 'David Lindsay', image: '/vogage.png' },
-    { id: 14, title: 'The Phoenix and the Carpet', author: 'Edith Nesbit', image: '/phoenix.png' },
+    { id: 14, title: 'The Phoenix & the Carpet', author: 'Edith Nesbit', image: '/phoenix.png' },
     { id: 6, title: 'The Hating Game', author: 'Sally Thorne', image: '/hate.png' },
     { id: 1, title: 'Me Before You', author: 'Jojo Moyes', image: '/me.png' },
     { id: 8, title: 'It Ends With Us', author: 'Colleen Hoover', image: '/end.png' },
@@ -22,7 +22,8 @@ const Cards = () => {
 
   return (
     <div className="pt-[130px] bg-white min-h-screen">
-      <div className="flex justify-center mb-6">
+
+      <div className="flex justify-center mb-8">
         <button
           className="bg-[#5352ED] text-white rounded"
           style={{
@@ -37,7 +38,7 @@ const Cards = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-7">
         {trendingBooks.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}

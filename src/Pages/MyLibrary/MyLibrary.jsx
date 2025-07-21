@@ -1,10 +1,26 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FavoritesContext } from '../../context/FavoritesContext';
 import BookCard from '../../Components/BookCard';
 import Footer from '../Footer/Footer';
 
 const MyLibrary = () => {
   const { favorites } = useContext(FavoritesContext);
+  const navigate = useNavigate();
+
+  const handleAddMore = () => {
+    navigate('/cards');
+  };
+
+  // Example: Assume showLoginPopup is true if user is not logged in (replace with your auth logic)
+  const showLoginPopup = false; // Set to true if user needs to log in
+
+  // Define readable book IDs and their progress data
+  const readableBookData = {
+    3: { progress: '30%', timeLeft: '120 min' }, // Harry Potter
+    4: { progress: '0%', timeLeft: '360 min' },  // The Hobbit
+    10: { progress: '80%', timeLeft: '20 min' }, // Red, White & Royal Blue
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-white pt-[130px]">
@@ -24,11 +40,32 @@ const MyLibrary = () => {
           </p>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-5">
-            {favorites.map((book, index) => (
-              <BookCard key={index} book={book} />
-            ))}
+            {favorites.map((book, index) => {
+              const isReadable = [3, 4, 10].includes(book.id);
+              const progressData = isReadable ? readableBookData[book.id] : null;
+              return (
+                <BookCard
+                  key={index}
+                  book={book}
+                  showLoginPopup={showLoginPopup}
+                  isInLibrary={true}
+                  isReadable={isReadable}
+                  progress={progressData?.progress}
+                  timeLeft={progressData?.timeLeft}
+                />
+              );
+            })}
           </div>
         )}
+      </div>
+      <div className="flex justify-center mb-5">
+        <button
+          onClick={handleAddMore}
+          style={{ backgroundColor: '#CB602B', fontFamily: '"Gothic A1", sans-serif' }}
+          className="text-white text-xl px-9 py-5 rounded-md hover:bg-opacity-90"
+        >
+          Add More
+        </button>
       </div>
       <Footer />
     </div>
