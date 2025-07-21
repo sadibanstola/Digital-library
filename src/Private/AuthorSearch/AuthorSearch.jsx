@@ -32,7 +32,7 @@ const AuthorSearch = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white pt-[130px]" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
-      <div className="flex-1 max-w-7xl mx-auto px-">
+      <div className="flex-1 max-w-8xl  px-9">
         {/* Search Bar */}
         <div className="flex justify-center mb-8">
           <div className="relative w-full max-w-xl">
@@ -57,7 +57,7 @@ const AuthorSearch = () => {
 
         {/* Book Cards */}
         {filteredBooks.length > 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-7">
             {filteredBooks.map((book) => (
               <BookCard key={book.id} book={book} />
             ))}
