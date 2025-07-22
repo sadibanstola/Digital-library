@@ -81,7 +81,7 @@ digital-library/
 ![Discover](public/discover.png)
 
 ###  Mood 
-![Mood](public/Mood.png)
+![Mood](public/Mood1.png)
 
 ###  Profile
 ![Profile](public/profile.png)
