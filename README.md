@@ -7,6 +7,7 @@ Currently, three books are available for reading:
 - *The Hobbit*  
 - *Red, White & Royal Blue*
 
+---
 ## Live Demo
 
 [Visit Digital Library on Netlify](https://digital-library-books.netlify.app)
@@ -68,7 +69,8 @@ digital-library/
 ├── package.json                  # Project dependencies and scripts
 ├── vite.config.js                # Vite configuration
 └── README.md                     # Project documentation
-
+```
+---
 
 ## Screenshots
 
