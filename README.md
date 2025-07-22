@@ -37,67 +37,38 @@ Currently, three books are available for reading:
 
 ---
 
-## 📂 Project Structure
-
-digital-library/
-├── src/
-│   ├── Components/
-│   │   ├── BookCard.jsx          # Reusable book card component
-│   │   ├── BookReader.jsx        # Book reading view with page navigation
-│   │   ├── Navbar.jsx            # Navigation bar, hidden on login/signup/reading pages
-│   ├── Pages/
-│   │   ├── Home/
-│   │   ├── Login/
-│   │   ├── SignUp/
-│   │   ├── About/
-│   │   ├── Footer/
-│   │   ├── MyLibrary/
-│   │   ├── AuthorSearch/
-│   │   ├── GenreBooks/
-│   ├── Private/
-│   │   ├── BookDetails/          # Book details page (protected)
-│   │   ├── ReadingContent/       # Book page content (e.g., RedWhitePages.jsx)
-│   ├── context/
-│   │   ├── AuthContext.jsx       # Manages dummy authentication state
-│   │   ├── FavoritesContext.jsx  # Manages favorite books state
-│   ├── App.jsx                   # Main app component with routing and NavigationContext
-│   ├── Routes.jsx                # Defines app routes with protected routes
-│   ├── ScrollToTop.jsx           # Ensures page scrolls to top on route change
-├── public/                       # Static assets (e.g., book cover images)
-├── package.json                  # Project dependencies and scripts
-├── vite.config.js                # Vite configuration
-└── README.md                     # Project documentation
+<pre> <code> ## 📂 Project Structure ``` digital-library/ ├── src/ │ ├── Components/ │ │ ├── BookCard.jsx # Reusable book card component │ │ ├── BookReader.jsx # Book reading view with page navigation │ │ ├── Navbar.jsx # Navigation bar, hidden on login/signup/reading pages │ ├── Pages/ │ │ ├── Home/ │ │ ├── Login/ │ │ ├── SignUp/ │ │ ├── About/ │ │ ├── Footer/ │ │ ├── MyLibrary/ │ │ ├── AuthorSearch/ │ │ ├── GenreBooks/ │ ├── Private/ │ │ ├── BookDetails/ # Book details page (protected) │ │ ├── ReadingContent/ # Book page content (e.g., RedWhitePages.jsx) │ ├── context/ │ │ ├── AuthContext.jsx # Manages dummy authentication state │ │ ├── FavoritesContext.jsx # Manages favorite books state │ ├── App.jsx # Main app component with routing and NavigationContext │ ├── Routes.jsx # Defines app routes with protected routes │ ├── ScrollToTop.jsx # Ensures page scrolls to top on route change ├── public/ # Static assets (e.g., book cover images) ├── package.json # Project dependencies and scripts ├── vite.config.js # Vite configuration └── README.md # Project documentation ``` </code> </pre>
 
 ## Screenshots
 
 ###  Homepage
-![Homepage](/home.png)
+![Homepage](public/home.png)
 
 ### Discover 
-![Discover](/discover.png)
+![Discover](public/discover.png)
 
 ###  Mood 
-![Mood](/Mood.png)
+![Mood](public/Mood.png)
 
 ###  Profile
-![Profile](/profile.png)
+![Profile](public/profile.png)
 
 ###  My Library
-![Library](/library.png)
+![Library](public/library.png)
 
 ###  Book Details
-![Book Details](/detail.png)
+![Book Details](public/detail.png)
 
 
 ###  Search By Author Name
-![Search By Author Name](/author.png)
+![Search By Author Name](public/author.png)
 
 ###  Account
-![Account](/account.png)
+![Account](public/account.png)
 
 
 ### Setting
-![Setting](/setting.png)
+![Setting](public/setting.png)
 
 
 
