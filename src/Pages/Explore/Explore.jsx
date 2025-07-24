@@ -82,9 +82,9 @@ const Explore = () => {
   }
 
   return (
-    <div className="bg-[white] px-4 sm:px-2 md:px-12 lg:px-0 py-8 sm:py-10 md:py-12 lg:py-12">
+    <div className="bg-[white] lg:px-0 py-8 sm:py-10 md:py-12 lg:py-12">
       {/* Genre Section */}
-      <section className="px-4 sm:px-5 md:px-6 lg:px-5 py-5 sm:py-6 md:py-7 lg:py-7 text-center bg-[#F4F6FD]">
+      <section className=" w-full py-5 sm:py-6 md:py-7 lg:py-7 text-center bg-[#F4F6FD]">
         <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-normal text-[#121212] mb-6 sm:mb-8 md:mb-10 lg:mb-10" style={{ fontFamily: "Marion" }}>
           Explore by Genre
         </h2>

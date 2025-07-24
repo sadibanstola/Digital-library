@@ -173,7 +173,11 @@ const Home = () => {
       <Discover id="discover" />
       <Explore />
       <Launch />
-      <Footer />
+      <div className="footer-class mt-5">
+  {/* Footer content */}
+   <Footer />
+</div>
+     
     </div>
   );
 };
