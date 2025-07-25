@@ -72,17 +72,22 @@ const BookCard = ({ book, showLoginPopup = false, isInLibrary = false, isReadabl
 
   return (
     <div
-      className={`bg-${isInLibrary && isReadable ? 'gray-50' : 'white'} p-3 shadow border border-[#5352ED] max-w-[370px] mx-auto relative sm:p-2 sm:max-w-[300px] md:p-2 md:max-w-[340px] ${
-        book.id && [3, 4, 10].includes(book.id) ? 'cursor-pointer hover:shadow-lg' : ''
-      }`}
-      onClick={handleCardClick}
-    >
+  className={`bg-${isInLibrary && isReadable ? 'gray-50' : 'white'} 
+    p-3 shadow border border-[#5352ED] 
+    w-full max-w-[370px] sm:max-w-[300px] md:max-w-[340px] 
+    mx-auto relative 
+    ${book.id && [3, 4, 10].includes(book.id) ? 'cursor-pointer hover:shadow-lg' : ''}
+  `}
+  onClick={handleCardClick}
+>
+
       <img
         src={book.image}
         alt={book.title}
         className="w-full h-42 object-cover mb-2 rounded-[6px]"
       />
-      <h2
+      
+<h2
         className="text-lg font-semibold"
         style={{ fontFamily: '"Gothic A1", sans-serif', fontWeight: 500, fontSize: '20px' }}
       >
@@ -94,31 +99,35 @@ const BookCard = ({ book, showLoginPopup = false, isInLibrary = false, isReadabl
       >
         <span style={{ color: '#CB602B', marginRight: '0.5rem' }}>By </span> {book.author}
       </p>
+
       {isInLibrary && isReadable && (
-        <div className="mt-2">
-          <div className="w-[290px] bg-gray-200 rounded-full h-2.5 mb-1">
-            <div
-              className="bg-orange-500 h-2.5 rounded-full"
-              style={{ width: progress || '0%' }}
-            ></div>
-          </div>
-          <div className="flex justify-between text-sm text-gray-500">
-            <span >{progress || '0%'} complete</span>
-            <span className='pr-7'>{timeLeft || '0 min left'}</span>
-          </div>
-        </div>
+        <div className="pl-1 pr-7 sm:pl-1 sm:pr-9">
+  <div className="bg-gray-200 rounded-full h-2.5 mb-1 w-full ">
+    <div
+      className="bg-orange-500 h-2.5 rounded-full"
+      style={{ width: progress || '0%' }}
+    ></div>
+  </div>
+  <div className="flex justify-between text-sm text-gray-500">
+    <span>{progress || '0%'} complete</span>
+    <span className="pr-2">{timeLeft || '0 min left'}</span>
+  </div>
+</div>
+
       )}
-      <div className="absolute bottom-5 right-4 sm:right-2 md:right-4">
-        <FontAwesomeIcon
-          icon={faBookmark}
-          style={{
-            color: isFavorite ? '#FFD700' : '#c5612b',
-            fontSize: '24px',
-            cursor: showLoginPopup ? 'not-allowed' : 'pointer',
-          }}
-          onClick={handleFavoriteClick}
-        />
-      </div>
+      
+      <div className="absolute bottom-7 right-3 sm:right-3 md:right-3">
+  <FontAwesomeIcon
+    icon={faBookmark}
+    style={{
+      color: isFavorite ? '#FFD700' : '#c5612b',
+      fontSize: '24px',
+      cursor: showLoginPopup ? 'not-allowed' : 'pointer',
+    }}
+    onClick={handleFavoriteClick}
+  />
+</div>
+
     </div>
   );
 };

@@ -40,7 +40,7 @@ const Launch = () => {
   };
 
   return (
-    <div className="relative w-full h-screen bg-white flex flex-col items-center justify-center overflow-hidden text-black">
+    <div className="relative w-full bg-white flex flex-col items-center justify-center overflow-hidden text-black ">
       {/* Launching Soon Text */}
       <motion.h1
         className="text-6xl w-[600px] h-[120px] font-[400] mb-3 text-[#5352ED] text-center"
@@ -116,7 +116,7 @@ const Launch = () => {
             <h3 className="text-xl text-[#5352ED] flex items-start justify-start">
               <span className="ml-2 pr-1"><FontAwesomeIcon icon={faCirclePlay} size="1x" /></span> Video
             </h3>
-            <p className="text-lg text-[#12121299] mt-2 pl-1 font-light">
+            <p className="text-lg text-[#12121299] mt-2 pl-1 font-light ">
               Get ready for exclusive behind-the-scenes videos and cinematic adaptations of your favorite tales.
             </p>
           </div>
