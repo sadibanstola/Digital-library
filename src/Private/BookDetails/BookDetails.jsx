@@ -63,67 +63,67 @@ const BookDetails = () => {
 
   return (
     <section>
-      <div className="w-full mx-auto pt-[100px] p-12" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
-        <div className="flex items-center mb-4 mt-11">
+      <div className="w-full mx-auto pt-[100px] px-4 sm:px-6 lg:px-12" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
+        <div className="flex items-center mb-4 mt-6 sm:mt-11">
           <FontAwesomeIcon
             icon={faArrowLeft}
-            className="text-gray-600 cursor-pointer text-3xl mr-4"
+            className="text-gray-600 cursor-pointer text-2xl sm:text-3xl mr-4"
             style={{ zIndex: 1000, position: 'relative', pointerEvents: 'auto' }}
             onClick={() => {
               console.log('Back button clicked! Origin:', currentOrigin, 'Location state:', location.state);
               navigate(currentOrigin);
             }}
           />
-          <h1 className="text-4xl font-medium text-gray-800">Detail page</h1>
+          <h1 className="text-2xl sm:text-4xl font-medium text-gray-800">Detail page</h1>
         </div>
 
-        <div className="bg-white p-8">
-          <div className="flex items-start mb-6">
+        <div className="bg-white p-4 sm:p-8">
+          <div className="flex flex-col sm:flex-row items-start mb-6">
             <img
               src={book.image || '/placeholder.svg'}
               alt={book.title}
-              className="w-45 h-60 object-cover rounded mr-6"
+              className="w-45 sm:w-45 h-auto sm:h-60 object-cover rounded mb-4 sm:mb-0 sm:mr-6"
             />
-            <div>
-              <h2 className="text-3xl font-medium mb-2">{book.title}</h2>
-              <p className="text-gray-600 text-center py-2 bg-gray-100 rounded-2xl mb-4 w-[200px]">
+            <div className="w-full sm:w-auto">
+              <h2 className="text-2xl sm:text-3xl font-medium mb-2">{book.title}</h2>
+              <p className="text-gray-600 text-center py-2 bg-gray-100 rounded-2xl mb-4 w-full sm:w-[200px]">
                 by {book.author}
               </p>
               <button
                 onClick={() => {
-                  navigate(`/read/${book.id}`, { state: { origin: currentOrigin } }); // Pass currentOrigin without modifying context
+                  navigate(`/read/${book.id}`, { state: { origin: currentOrigin } });
                 }}
-                className="bg-[#CB602B] text-white px-11 py-2 rounded mb-2 mt-20"
+                className="bg-[#CB602B] text-white px-6 sm:px-11 py-2 rounded mb-2 mt-4 sm:mt-20 w-full sm:w-auto"
               >
                 Read
               </button>
             </div>
           </div>
 
-          <div className="flex space-x-7 border border-[#DE8443] p-4 mb-6 w-[500px] h-[100px] items-center justify-between">
-            <button className="flex flex-col items-center text-[black] hover:text-gray-800 transition-colors">
+          <div className="flex flex-col sm:flex-row sm:space-x-7 border border-[#DE8443] p-4 mb-6 w-full sm:w-[500px] h-auto sm:h-[100px] items-center justify-between">
+            <button className="flex flex-col items-center text-[black] hover:text-gray-800 transition-colors mb-2 sm:mb-0">
               <FontAwesomeIcon icon={faFlag} className="text-lg mb-1" />
-              <span className="text-xl font-light">Report</span>
+              <span className="text-sm sm:text-xl font-light">Report</span>
             </button>
-            <button className="flex flex-col items-center text-[black] hover:text-gray-800 transition-colors">
+            <button className="flex flex-col items-center text-[black] hover:text-gray-800 transition-colors mb-2 sm:mb-0">
               <FontAwesomeIcon icon={faDownload} className="text-lg mb-1" />
-              <span className="text-xl font-light">Download with AD</span>
+              <span className="text-sm sm:text-xl font-light">Download with AD</span>
             </button>
             <button className="flex flex-col items-center text-[black] hover:text-gray-800 transition-colors">
               <FontAwesomeIcon icon={faPlus} className="text-lg mb-1" />
-              <span className="text-xl font-light">Request new book</span>
+              <span className="text-sm sm:text-xl font-light">Request new book</span>
             </button>
           </div>
 
           <div className="mb-6">
-            <h3 className="text-2xl font-medium mb-2">About this book</h3>
-            <p className="text-gray-700 text-xl w-[800px]">{book.description}</p>
+            <h3 className="text-xl sm:text-2xl font-medium mb-2">About this book</h3>
+            <p className="text-gray-700 text-base sm:text-xl w-full sm:w-[800px]">{book.description}</p>
           </div>
 
           <div>
-            <h3 className="text-2xl font-medium mb-2">Ratings & Reviews</h3>
+            <h3 className="text-xl sm:text-2xl font-medium mb-2">Ratings & Reviews</h3>
             <div className="flex items-center">
-              <span className="text-[#DFB300] text-xl">
+              <span className="text-[#DFB300] text-lg sm:text-xl">
                 {'★'.repeat(Math.floor(book.rating)) + '☆'.repeat(5 - Math.floor(book.rating))}
               </span>
             </div>

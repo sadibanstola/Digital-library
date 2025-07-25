@@ -45,7 +45,7 @@ const Navbar = () => {
       { name: 'The Witcher: The Last Wish' },        
       { name: 'The Hobbit' },                         
       { name: 'The Unveiling' },                    
-      { name: 'Harry Potter and the Sorcerer\'s Stone' }, 
+      { name: 'Harry Potter & the Sorcerer\'s Stone' }, 
       { name: 'The Heirs of Southbridge' },           
       { name: 'Hidden City' },                         
       { name: 'Red, White & Royal Blue' },            
@@ -228,74 +228,81 @@ const Navbar = () => {
       )}
       
       {/* Discover Section */}
-      <AnimatePresence>
-        {isDiscoverOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-xs z-40"
-              onClick={toggleDiscover}
-            />
-            
-            <motion.div
-              initial={{ y: '-100%' }}
-              animate={{ y: '80px' }}
-              exit={{ y: '-100%' }}
-              transition={{ type: 'spring', damping: 18 }}
-              className="fixed top-[100px] left-0 lg:left-1/4 w-full lg:w-[900px] bg-white z-50 shadow-lg"
-            >
-              <div className="h-full flex max-w-[1300px] mx-auto flex-col lg:flex-row">
-                <div className="w-full lg:w-1/4 bg-white p-3 sm:p-4 lg:p-6 relative">
-                  <div className="absolute top-6 bottom-6 right-0 w-[2px] bg-[#5352EDA6] hidden lg:block"></div>
-                  <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-4 sm:mb-6"></h3>
-                  <ul className="space-y-3 sm:space-y-4">
-                    {['Title', 'Author', 'Audio/Video'].map((tab) => (
-                      <li key={tab}>
-                        <button
-                          onMouseEnter={() => setActiveTab(tab)}
-                          className={`w-full text-left p-2 sm:p-3 rounded-md border border-[#CB602B] flex items-center justify-between ${activeTab === tab ? 'bg-[#CB602B] text-white' : 'hover:bg-gray-100'}`}
-                        >
-                          <span className="font-medium text-xs sm:text-sm lg:text-base">{tab}</span>
-                          <FontAwesomeIcon icon={faChevronRight} size="xs" />
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+      
 
-                <div className="w-full lg:w-3/4 p-3 sm:p-4 lg:p-5 relative" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
-                  <div className="absolute top-4 sm:top-5 lg:top-6 right-3 sm:right-4 lg:right-6">
-                    <button 
-                      onClick={handleSeeMore}
-                      className="text-[#CB602B] font-medium flex items-center text-xs sm:text-sm lg:text-base"
-                    >
-                      See more
-                      <FontAwesomeIcon icon={faChevronRight} className="ml-1 sm:ml-1.5" size="xs" />
-                    </button>
-                  </div>
+<AnimatePresence>
+  {isDiscoverOpen && (
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-xs z-40"
+        onClick={toggleDiscover}
+      />
+      <motion.div
+        initial={{ y: '-100%' }}
+        animate={{ y: '80px' }}
+        exit={{ y: '-100%' }}
+        transition={{ type: 'spring', damping: 18 }}
+        className="fixed top-[100px] left-0 right-0 mx-auto w-[100vw] max-w-[1100px] bg-white z-50 shadow-lg"
+      >
+        <div className="h-full flex max-w-[1300px] mx-auto flex-col lg:flex-row">
+          <div className="w-full lg:w-1/4 bg-white p-3 sm:p-4 lg:p-6 relative">
+            <div className="absolute top-6 bottom-6 right-0 w-[2px] bg-[#5352EDA6] hidden lg:block"></div>
+            <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-4 sm:mb-6"></h3>
+            <ul className="space-y-3 sm:space-y-3">
+              {['Title', 'Author', 'Audio/Video'].map((tab) => (
+                <li key={tab}>
+                  <button
+                    onMouseEnter={() => setActiveTab(tab)}
+                    className={`w-full text-left p-2 sm:p-3 rounded-md border border-[#CB602B] flex items-center justify-between ${
+                      activeTab === tab ? 'bg-[#CB602B] text-white' : 'hover:bg-gray-100'
+                    }`}
+                  >
+                    <span className="font-medium text-xs sm:text-sm lg:text-base">{tab}</span>
+                    <FontAwesomeIcon icon={faChevronRight} size="xs" />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 h-full pt-6">
-                    {activeTab === 'Audio/Video' ? (
-                      <div className="col-span-1 sm:col-span-2 lg:col-span-3 flex flex-col items-center justify-center h-full">
-                        <p className="text-2xl sm:text-3xl lg:text-5xl font-semibold mb-2 text-[#CB602B]" style={{ fontFamily: '"Gothic A1", sans-serif' }}>Launching Soon</p>
-                      </div>
-                    ) : (
-                      booksData[activeTab].map((book, index) => (
-                        <div key={index} className="p-2 sm:p-3 hover:bg-gray-50 rounded-lg">
-                          <p className="text-xs sm:text-sm lg:text-base text-black">{book.name || book.author}</p>
-                        </div>
-                      ))
-                    )}
-                  </div>
+          <div className="w-full lg:w-3/4 p-3 sm:p-4 lg:p-5 relative" style={{ fontFamily: '"Gothic A1", sans-serif' }}>
+            <div className="absolute top-4 sm:top-5 lg:top-6 right-3 sm:right-4 lg:right-6">
+              <button
+                onClick={handleSeeMore}
+                className="text-[#CB602B] font-medium flex items-center text-xs sm:text-sm lg:text-base"
+              >
+                See more
+                <FontAwesomeIcon icon={faChevronRight} className="ml-1 sm:ml-1.5" size="xs" />
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 h-full pt-6">
+              {activeTab === 'Audio/Video' ? (
+                <div className="col-span-1 sm:col-span-2 lg:col-span-3 flex flex-col items-center justify-center h-full">
+                  <p
+                    className="text-2xl sm:text-3xl lg:text-5xl font-semibold mb-2 text-[#CB602B]"
+                    style={{ fontFamily: '"Gothic A1", sans-serif' }}
+                  >
+                    Launching Soon
+                  </p>
                 </div>
-              </div>
-              
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+              ) : (
+                booksData[activeTab].map((book, index) => (
+                  <div key={index} className="p-2 sm:p-3 hover:bg-gray-50 rounded-lg">
+                    <p className="text-xs sm:text-sm lg:text-base text-black">{book.name || book.author}</p>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </>
+  )}
+</AnimatePresence>
     </>
   );
 };

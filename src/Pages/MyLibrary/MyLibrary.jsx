@@ -12,10 +12,10 @@ const MyLibrary = () => {
     navigate('/cards');
   };
 
-  // Example: Assume showLoginPopup is true if user is not logged in (replace with your auth logic)
-  const showLoginPopup = false; // Set to true if user needs to log in
+  
+  const showLoginPopup = false; 
 
-  // Define readable book IDs and their progress data
+  
   const readableBookData = {
     3: { progress: '30%', timeLeft: '120 min' }, // Harry Potter
     4: { progress: '0%', timeLeft: '360 min' },  // The Hobbit
@@ -24,12 +24,14 @@ const MyLibrary = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white pt-[130px]">
+      
       <h1
         className="text-2xl font-bold text-center mb-6"
         style={{ fontFamily: '"Gothic A1", sans-serif' }}
       >
         My Library
       </h1>
+      
       <div className="flex-1">
         {favorites.length === 0 ? (
           <p
@@ -39,7 +41,8 @@ const MyLibrary = () => {
             No books in your library yet.
           </p>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-5 mb-7">
+
             {favorites.map((book, index) => {
               const isReadable = [3, 4, 10].includes(book.id);
               const progressData = isReadable ? readableBookData[book.id] : null;
@@ -58,6 +61,7 @@ const MyLibrary = () => {
           </div>
         )}
       </div>
+
       <div className="flex justify-center mb-5">
         <button
           onClick={handleAddMore}
