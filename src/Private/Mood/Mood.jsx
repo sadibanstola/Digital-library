@@ -25,18 +25,17 @@ const Mood = () => {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-100">
-      <div className="text-center p-8 w-[800px]" style={{
+      <div className="text-center p-4 sm:p-8 w-full max-w-[800px]" style={{
           fontFamily: 'Gothic A1',
         }}>
         <img
           src="/Mood.png"
           alt="People with thought bubbles"
-          className="mx-auto mb-6"
-          style={{ width: '300px' }}
+          className="mx-auto mb-6 w-[200px] sm:w-[300px]"
         />
-        <h1 className="text-4xl font-medium mb-2 text-[#000000] ">What kind of stories are you in the mood for?</h1>
-        <p className="text-[#000000E5] mb-6 text-[20px]">Choose up to three emotions that describe how you want to feel while reading.</p>
-        <div className="grid grid-cols-3 gap-3 mb-6">
+        <h1 className="text-2xl sm:text-4xl font-medium mb-2 text-[#000000]">What kind of stories are you in the mood for?</h1>
+        <p className="text-[#000000E5] mb-6 text-base sm:text-[20px]">Choose up to three emotions that describe how you want to feel while reading.</p>
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
           {moods.map((mood) => (
             <label
               key={mood}
@@ -65,13 +64,13 @@ const Mood = () => {
                   </svg>
                 )}
               </span>
-              <span className="text-[22px] font-medium text-gray-700">{mood}</span>
+              <span className="text-lg sm:text-[22px] font-medium text-gray-700">{mood}</span>
             </label>
           ))}
         </div>
         <button
           onClick={handleContinue}
-          className="px-6 py-3 bg-[#5352ED] text-white rounded-md hover:bg-[#4342D5] transition-colors duration-200"
+          className="px-6 py-3 bg-[#5352ED] text-white rounded-md hover:bg-[#4342D5] transition-colors duration-200 w-full sm:w-auto"
         >
           Continue
         </button>
